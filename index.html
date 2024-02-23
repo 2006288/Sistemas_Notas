@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login CFBL</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="container">
+        <span></span>
+        <span></span>
+        <span></span>
+        <form id="signinForm">
+            <h2>Login</h2>
+            <div class="inputBox">
+                <input type="text" placeholder="Cedula" required>
+            </div>
+            <div class="inputBox">
+                <input type="password" placeholder="Contraseña" required>
+            </div>
+            <div class="inputBox group">
+                <a href="#">Forgot Password</a>
+                <a href="#" id="signup">Signup</a>
+            </div>
+            <div class="inputBox">
+                <input type="submit" value="Sign in" id="entrar">
+            </div>
+        </form>
+
+        <form id="signupForm">
+            <h2>Registration</h2>
+            <div class="inputBox">
+                <input type="text" placeholder="Nombres" required>
+            </div>
+            <div class="inputBox">
+                <input type="text" placeholder="Apellidos" required>
+            </div>
+            <div class="inputBox">
+                <input type="text" placeholder="Cedula" required>
+            </div>
+            <div class="inputBox">
+                <input type="password" placeholder="Contraseña" required>
+            </div>
+            <div class="inputBox">
+                <input type="password" placeholder="Clave">
+            </div>
+            <div class="inputBox">
+                <input type="submit" value="Register Account">
+            </div>
+            <div class="inputBox group">
+                <a href="#">Already Have an Account ? <b id="signin">Login</b></a>
+            </div>
+        </form>
+    </div>
+    <script>
+        let signup = document.querySelector('#signup');
+        let signin = document.querySelector('#signin');
+        let body = document.querySelector('body');
+        let entrar = document.getElementById('entrar');
+        signup.onclick = function(){
+            body.classList.add('signup');
+        }
+        signin.onclick = function(){
+            body.classList.remove('signup');
+        }
+        entrar.onclick = function(){
+            window.location.href = 'Maestros.html'
+        }
+    </script>
+</body>
+</html>
