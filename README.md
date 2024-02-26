@@ -8,7 +8,7 @@ Registro de Notas: Permite a los docentes registrar las notas de los estudiantes
 Reportes de Desempeño: Genera reportes de desempeño académico por estudiante y por curso.
 # Instalación
 Clona este repositorio en tu máquina local utilizando el siguiente comando:
-  git clone https://github.com/tuusuario/sistema-de-notas.git
+  git@github.com:2006288/Sistemas_Notas.git
 Importa la base de datos notas.sql en tu servidor MySQL.
 Configura los detalles de la base de datos en el archivo config.php.
 Abre el proyecto en tu navegador y comienza a utilizar el sistema.
