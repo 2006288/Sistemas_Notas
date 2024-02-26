@@ -20,31 +20,31 @@
                 <li style="--bg:#f44336;" class="active">
                     <a href="#">
                         <div class="icon"><ion-icon name="home-outline"></ion-icon></div>
-                        <div class="text">Home</div>
+                        <div class="text">Inicio</div>
                     </a>
                 </li>
                 <li style="--bg:#ffa117;">
                     <a href="#">
                         <div class="icon"><ion-icon name="person-outline"></ion-icon></div>
-                        <div class="text">Profile</div>
+                        <div class="text">Notas</div>
                     </a>
                 </li>
                 <li style="--bg:#0fc70f;">
                     <a href="#">
                         <div class="icon"><ion-icon name="chatbubble-outline"></ion-icon></div>
-                        <div class="text">Inbox</div>
+                        <div class="text">Tareas</div>
                     </a>
                 </li>
                 <li style="--bg:#2196f3;">
                     <a href="#">
                         <div class="icon"><ion-icon name="bar-chart-outline"></ion-icon></div>
-                        <div class="text">Analytics</div>
+                        <div class="text">Desempeño Estudiantes</div>
                     </a>
                 </li>
                 <li style="--bg:#b145e9;">
                     <a href="#">
                         <div class="icon"><ion-icon name="cart-outline"></ion-icon></div>
-                        <div class="text">Order</div>
+                        <div class="text">Desempeño Curso</div>
                     </a>
                 </li>
                 <li style="--bg:#e91e63;">
@@ -74,12 +74,92 @@
             </div>
         </ul>
     </div>
+    <div class="content_mostrar">
+        <div class="Inicio">
+            <h2>Licenciados</h2>
+            <p>
+                ¡Bienvenido al sistema de notas de la Unidad Educativa Fiscomisional Bernabé de Larraul! <br>
+                En este apartado se le proporcionara el listado de los Licenciados de la institucion, junto con sus respectivos nombres y asignaturas.
+            </p>
+            <div class="container">
+                <div class="card">
+                    <div class="imgBx">
+                        <img src="img/Licenciados/Kennet Chungandro.jpg">
+                    </div>
+                    <div class="content">
+                        <h2>Kennet Chungandro</h2>
+                        <h3>Asignaturas</h3>
+                        <p>Programacion</p>
+                        <p>Diseño Web</p>
+                        <p>Soporte Tecnico</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="imgBx">
+                        <img src="img/Licenciados/Jorge Ortega.jpg">
+                    </div>
+                    <div class="content">
+                        <h2>Jorge Ortega</h2>
+                        <h3>Asignaturas</h3>
+                        <p>Educacion Fisica</p>
+                        <p>Biologia</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="imgBx">
+                        <img src="img/Licenciados/Majito.jpg">
+                    </div>
+                    <div class="content">
+                        <h2>Jorge Ortega</h2>
+                        <h3>Asignaturas</h3>
+                        <p>Educacion Fisica</p>
+                        <p>Biologia</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="imgBx">
+                        <img src="img/Licenciados/Jorge Ortega.jpg">
+                    </div>
+                    <div class="content">
+                        <h2>Jorge Ortega</h2>
+                        <h3>Asignaturas</h3>
+                        <p>Educacion Fisica</p>
+                        <p>Biologia</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="imgBx">
+                        <img src="img/Licenciados/Jorge Ortega.jpg">
+                    </div>
+                    <div class="content">
+                        <h2>Jorge Ortega</h2>
+                        <h3>Asignaturas</h3>
+                        <p>Educacion Fisica</p>
+                        <p>Biologia</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="imgBx">
+                        <img src="img/Licenciados/Jorge Ortega.jpg">
+                    </div>
+                    <div class="content">
+                        <h2>Jorge Ortega</h2>
+                        <h3>Asignaturas</h3>
+                        <p>Educacion Fisica</p>
+                        <p>Biologia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
         let menuToggle = document.querySelector('.menuToggle');
         let sidebar = document.querySelector('.sidebar');
+        let content_mostrar = document.querySelector('.content_mostrar');
         menuToggle.onclick = function(){
             menuToggle.classList.toggle('active');
             sidebar.classList.toggle('active');
+            content_mostrar.classList.toggle('active');
         }
 
         let Menulist = document.querySelectorAll('.Menulist li');

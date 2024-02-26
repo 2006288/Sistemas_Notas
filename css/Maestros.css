@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
 *
 {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Anta", sans-serif;
 }
 :root
 {
@@ -14,10 +15,12 @@ body
 {
     min-height: 100vh;
     background: var(--clr);
+    display: flex;
+    flex-direction: row;
 }
 .sidebar
 {
-    position: absolute;
+    position: fixed;
     width: 80px;
     height: 100vh;
     background: #fff;
@@ -27,7 +30,7 @@ body
 }
 .sidebar.active
 {
-    width: 345px;
+    width: 355px;
 }
 .sidebar ul
 {
@@ -71,7 +74,7 @@ body
 }
 .sidebar ul li.logo
 {
-    margin-bottom: 50px;
+    margin-bottom: 45px;
 }
 .sidebar ul li.logo .icon
 {
@@ -177,9 +180,9 @@ body
 }
 .menuToggle
 {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
     width: 50px;
     min-height: 50px;
     background: #31a4ff;
@@ -218,4 +221,112 @@ body
 .menuToggle.active::after
 {
     transform: translateY(0px) rotate(-45deg);
+}
+.content_mostrar
+{
+    position: absolute;
+    background: #fff;
+    left: 80px;
+    padding: 2em;
+    transition: 0.5s;
+}
+.content_mostrar.active
+{
+    left: 355px;
+}
+.content_mostrar .Inicio h2
+{
+    font-weight: 600;
+    font-size: 4em;
+    text-transform: uppercase;
+}
+.content_mostrar .Inicio p
+{
+    font-size: 1.2em;
+    margin-top: 1em;
+}
+.content_mostrar .Inicio .container
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px 50px;
+    padding: 100px 50px;
+}
+.content_mostrar .Inicio .container .card
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 350px;
+    height: 300px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 35px 90px rgba(0, 0, 0,0.15);
+    transition: 0.5s;
+}
+.content_mostrar .Inicio .container .card:hover
+{
+    height: 350px;
+}
+.content_mostrar .Inicio .container .card .imgBx
+{
+    position: absolute;
+    top: 20px;
+    width: 300px;
+    height: 220px;
+    overflow: hidden;
+    background: #333;
+    border-radius: 12px;
+    transition: 0.5s;
+    box-shadow: 0 15px 45px rgba(0, 0, 0,0.2);
+}
+.content_mostrar .Inicio .container .card:hover .imgBx
+{
+    top: -100px;
+    scale: 0.75;
+}
+.content_mostrar .Inicio .container .card .imgBx img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.content_mostrar .Inicio .container .card .content
+{
+    position: absolute;
+    top: 252px;
+    width: 100%;
+    height: 35px;
+    padding: 0 30px;
+    overflow: hidden;
+    text-align: center;
+    transition: 0.5s;
+}
+.content_mostrar .Inicio .container .card:hover .content
+{
+    top: 130px;
+    height: 250px;
+}
+.content_mostrar .Inicio .container .card .content h2
+{
+    font-weight: 500;
+    font-size: 1.5em;
+    text-transform: capitalize;
+    color: #e74c3c;
+    margin-bottom: 1em;
+}
+.content_mostrar .Inicio .container .card .content h3
+{
+    font-size: 1.2em;
+}
+.content_mostrar .Inicio .container .card .content p
+{
+    font-size: 1em;
 }
