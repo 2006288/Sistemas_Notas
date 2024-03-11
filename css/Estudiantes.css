@@ -1,0 +1,451 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Anta", sans-serif;
+}
+:root
+{
+    --clr: #14161e
+}
+body
+{
+    min-height: 100vh;
+    background: var(--clr);
+    display: flex;
+    flex-direction: row;
+}
+.sidebar
+{
+    position: fixed;
+    width: 80px;
+    height: 100vh;
+    background: #fff;
+    transition: 0.5s;
+    padding-left: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.sidebar.active
+{
+    width: 350px;
+}
+.sidebar ul
+{
+    position: relative;
+}
+.sidebar ul li
+{
+    position: relative;
+    list-style: none;
+}
+.sidebar ul li.logo
+{
+    margin-bottom: 50px;
+}
+.sidebar ul li.logo .icon
+{
+    font-size: 2em;
+    color: var(--clr);
+}
+.sidebar ul li.logo .text
+{
+    font-size: 1.2em;
+    font-weight: 500;
+    color: var(--clr);
+}
+.sidebar ul li a
+{
+    position: relative;
+    display: flex;
+    white-space: nowrap;
+    text-decoration: none;
+}
+.sidebar ul li a .icon
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 60px;
+    height: 70px;
+    font-size: 1.5em;
+    color: #333;
+    transition: 0.5s;
+}
+.sidebar ul li a .text
+{
+    position: relative;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    color: #333;
+    padding-left: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+.sidebar ul li:hover a .icon,
+.sidebar ul li:hover a .text
+{
+    color: var(--bg);
+}
+.sidebar input
+{
+    appearance: none;
+    display: none;
+}
+.sidebar .icons label
+{
+    position: relative;
+    display: flex;
+    white-space: nowrap;
+    text-decoration: none;
+    cursor: pointer;
+}
+.sidebar .icons label .icon
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 60px;
+    height: 70px;
+    font-size: 1.5em;
+    color: #333;
+    transition: 0.5s;
+    padding-left: 10px;
+}
+.sidebar .icons label .text
+{
+    position: relative;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    color: #333;
+    padding-left: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+.sidebar input:nth-child(1):checked ~ .icons label:nth-child(1),
+.sidebar input:nth-child(2):checked ~ .icons label:nth-child(2),
+.sidebar input:nth-child(3):checked ~ .icons label:nth-child(3),
+.sidebar input:nth-child(4):checked ~ .icons label:nth-child(4),
+.sidebar input:nth-child(5):checked ~ .icons label:nth-child(5),
+.sidebar input:nth-child(6):checked ~ .icons label:nth-child(6)
+{
+    background: var(--clr);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+.sidebar input:nth-child(1):checked ~ .icons label:nth-child(1) .text,
+.sidebar input:nth-child(2):checked ~ .icons label:nth-child(2) .text,
+.sidebar input:nth-child(3):checked ~ .icons label:nth-child(3) .text,
+.sidebar input:nth-child(4):checked ~ .icons label:nth-child(4) .text,
+.sidebar input:nth-child(5):checked ~ .icons label:nth-child(5) .text,
+.sidebar input:nth-child(6):checked ~ .icons label:nth-child(6) .text
+{
+    color: var(--bg);
+}
+.sidebar input:nth-child(1):checked ~ .icons label:nth-child(1) .icon,
+.sidebar input:nth-child(2):checked ~ .icons label:nth-child(2) .icon,
+.sidebar input:nth-child(3):checked ~ .icons label:nth-child(3) .icon,
+.sidebar input:nth-child(4):checked ~ .icons label:nth-child(4) .icon,
+.sidebar input:nth-child(5):checked ~ .icons label:nth-child(5) .icon,
+.sidebar input:nth-child(6):checked ~ .icons label:nth-child(6) .icon
+{
+    color: #fff;
+}
+.sidebar input:nth-child(1):checked ~ .icons label:nth-child(1) .icon::before,
+.sidebar input:nth-child(2):checked ~ .icons label:nth-child(2) .icon::before,
+.sidebar input:nth-child(3):checked ~ .icons label:nth-child(3) .icon::before,
+.sidebar input:nth-child(4):checked ~ .icons label:nth-child(4) .icon::before,
+.sidebar input:nth-child(5):checked ~ .icons label:nth-child(5) .icon::before,
+.sidebar input:nth-child(6):checked ~ .icons label:nth-child(6) .icon::before
+{
+    content: '';
+    position: absolute;
+    inset: 5px;
+    width: 60px;
+    background: var(--bg);
+    border-radius: 50%;
+    transition: 0.5s;
+}
+.sidebar input:nth-child(1):checked ~ .icons label:nth-child(1)::before,
+.sidebar input:nth-child(2):checked ~ .icons label:nth-child(2)::before,
+.sidebar input:nth-child(3):checked ~ .icons label:nth-child(3)::before,
+.sidebar input:nth-child(4):checked ~ .icons label:nth-child(4)::before,
+.sidebar input:nth-child(5):checked ~ .icons label:nth-child(5)::before,
+.sidebar input:nth-child(6):checked ~ .icons label:nth-child(6)::before
+{
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 5px 5px 0 5px var(--clr);
+    background: transparent;
+}
+.sidebar input:nth-child(1):checked ~ .icons label:nth-child(1)::after,
+.sidebar input:nth-child(2):checked ~ .icons label:nth-child(2)::after,
+.sidebar input:nth-child(3):checked ~ .icons label:nth-child(3)::after,
+.sidebar input:nth-child(4):checked ~ .icons label:nth-child(4)::after,
+.sidebar input:nth-child(5):checked ~ .icons label:nth-child(5)::after,
+.sidebar input:nth-child(6):checked ~ .icons label:nth-child(6)::after
+{
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 5px -5px 0 5px var(--clr);
+    background: transparent;
+}
+.sidebar .icons label:hover .text,
+.sidebar .icons label:hover .icon
+{
+    color: var(--bg);
+}
+.sidebar input:nth-child(1):checked ~ .icons label:nth-child(1):hover .icon,
+.sidebar input:nth-child(2):checked ~ .icons label:nth-child(2):hover .icon,
+.sidebar input:nth-child(3):checked ~ .icons label:nth-child(3):hover .icon,
+.sidebar input:nth-child(4):checked ~ .icons label:nth-child(4):hover .icon,
+.sidebar input:nth-child(5):checked ~ .icons label:nth-child(5):hover .icon,
+.sidebar input:nth-child(6):checked ~ .icons label:nth-child(6):hover .icon
+{
+    color: var(--bg);
+}
+.sidebar input:nth-child(1):checked ~ .icons label:nth-child(1):hover .icon::before,
+.sidebar input:nth-child(2):checked ~ .icons label:nth-child(2):hover .icon::before,
+.sidebar input:nth-child(3):checked ~ .icons label:nth-child(3):hover .icon::before,
+.sidebar input:nth-child(4):checked ~ .icons label:nth-child(4):hover .icon::before,
+.sidebar input:nth-child(5):checked ~ .icons label:nth-child(5):hover .icon::before,
+.sidebar input:nth-child(6):checked ~ .icons label:nth-child(6):hover .icon::before
+{
+    background: #fff;
+}
+.bottom
+{
+    margin-top: 99px;
+}
+.imgBx
+{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.imgBx img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.content
+{
+    position: absolute;
+    top: 0;
+    left: 83px;
+    height: 100vh;
+    width: 197vh;
+    background: #fff;
+    transition: 0.5s;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-right: 10px;
+    overflow: auto;
+}
+.content::-webkit-scrollbar
+{
+    width: 7px;
+}
+.content::-webkit-scrollbar-thumb
+{
+    background: #e74c3c;
+    border-radius: 20px;
+}
+.content.active
+{
+    left: 353px;
+    width: 160vh;
+}
+.content .contentBx
+{
+    position: absolute;
+    inset: 0;
+    padding: 50px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+.sidebar input:nth-child(1):checked ~  .content .contentBx:nth-child(1),
+.sidebar input:nth-child(2):checked ~  .content .contentBx:nth-child(2),
+.sidebar input:nth-child(3):checked ~  .content .contentBx:nth-child(3),
+.sidebar input:nth-child(4):checked ~  .content .contentBx:nth-child(4),
+.sidebar input:nth-child(5):checked ~  .content .contentBx:nth-child(5),
+.sidebar input:nth-child(6):checked ~  .content .contentBx:nth-child(6)
+{
+    visibility: visible;
+    opacity: 1;
+}
+
+.content .contentBx h2
+{
+    text-transform: uppercase;
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+.content .contentBx p
+{
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+.content .contentBx .container
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px 50px;
+    padding: 100px 50px;
+}
+.content .contentBx .container .card
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 350px;
+    height: 300px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 35px 90px rgba(0, 0, 0,0.15);
+    transition: 0.5s;
+}
+.content .contentBx .container .card:hover
+{
+    height: 350px;
+}
+.content .contentBx .container .card .imgBx
+{
+    position: absolute;
+    top: 20px;
+    width: 300px;
+    height: 220px;
+    overflow: hidden;
+    background: #333;
+    border-radius: 12px;
+    transition: 0.5s;
+    box-shadow: 0 15px 45px rgba(0, 0, 0,0.2);
+}
+.content .contentBx .container .card:hover .imgBx
+{
+    top: -100px;
+    scale: 0.75;
+}
+.content .contentBx .container .card:hover .imgBx img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.content .contentBx .container .card .info
+{
+    position: absolute;
+    top: 252px;
+    width: 100%;
+    height: 35px;
+    padding: 0 30px;
+    overflow: hidden;
+    text-align: center;
+    transition: 0.5s;
+}
+.content .contentBx .container .card:hover .info
+{
+    top: 130px;
+    height: 250px;
+}
+.content .contentBx .container .card .info h2
+{
+    font-weight: 500;
+    font-size: 1.5em;
+    text-transform: capitalize;
+    color: #e74c3c;
+    margin-bottom: 1em;
+}
+.content .contentBx .container .card .info h3
+{
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+.content .contentBx .container .card .info p
+{
+    font-size: 1em;
+}
+
+
+
+
+
+.menuToggle
+{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    min-height: 50px;
+    background: #31a4ff;
+    z-index: 1000;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menuToggle::before
+{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    transform: translateY(-9px);
+    transition: 0.5s;
+    box-shadow: 0 9px 0 #fff;
+}
+.menuToggle::after
+{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    transform: translateY(9px);
+    transition: 0.5s;
+}
+.menuToggle.active::before
+{
+    transform: translateY(0px) rotate(45deg);
+    box-shadow: 0 0 0 #fff;
+}
+.menuToggle.active::after
+{
+    transform: translateY(0px) rotate(-45deg);
+}
