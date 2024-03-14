@@ -261,23 +261,13 @@ body
     top: 0;
     left: 83px;
     height: 100vh;
-    width: 197vh;
+    width: 194.5vh;
     background: #fff;
     transition: 0.5s;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-radius: 10px;
     margin-right: 10px;
-    overflow: auto;
 }
-.content::-webkit-scrollbar
-{
-    width: 7px;
-}
-.content::-webkit-scrollbar-thumb
-{
-    background: #e74c3c;
-    border-radius: 20px;
-}
+
 .content.active
 {
     left: 353px;
@@ -291,6 +281,7 @@ body
     visibility: hidden;
     opacity: 0;
     transition: 0.5s;
+    padding: 2em;
 }
 .sidebar input:nth-child(1):checked ~  .content .contentBx:nth-child(1),
 .sidebar input:nth-child(2):checked ~  .content .contentBx:nth-child(2),
@@ -314,7 +305,21 @@ body
     font-size: 1.1em;
     margin-bottom: 15px;
 }
-.content .contentBx .container
+/*Inicio*/
+.content .contentBx.Inicio
+{
+    overflow: auto;
+}
+.content .contentBx.Inicio::-webkit-scrollbar
+{
+    width: 6px;
+}
+.content .contentBx.Inicio::-webkit-scrollbar-thumb
+{
+    background: #e74c3c;
+    border-radius: 25px;
+}
+.content .contentBx.Inicio .container
 {
     position: relative;
     display: flex;
@@ -324,7 +329,7 @@ body
     gap: 100px 50px;
     padding: 100px 50px;
 }
-.content .contentBx .container .card
+.content .contentBx.Inicio .container .card
 {
     position: relative;
     display: flex;
@@ -337,11 +342,11 @@ body
     box-shadow: 0 35px 90px rgba(0, 0, 0,0.15);
     transition: 0.5s;
 }
-.content .contentBx .container .card:hover
+.content .contentBx.Inicio .container .card:hover
 {
     height: 350px;
 }
-.content .contentBx .container .card .imgBx
+.content .contentBx.Inicio .container .card .imgBx
 {
     position: absolute;
     top: 20px;
@@ -353,12 +358,12 @@ body
     transition: 0.5s;
     box-shadow: 0 15px 45px rgba(0, 0, 0,0.2);
 }
-.content .contentBx .container .card:hover .imgBx
+.content .contentBx.Inicio .container .card:hover .imgBx
 {
     top: -100px;
     scale: 0.75;
 }
-.content .contentBx .container .card:hover .imgBx img
+.content .contentBx.Inicio .container .card:hover .imgBx img
 {
     position: absolute;
     top: 0;
@@ -367,7 +372,7 @@ body
     height: 100%;
     object-fit: cover;
 }
-.content .contentBx .container .card .info
+.content .contentBx.Inicio .container .card .info
 {
     position: absolute;
     top: 252px;
@@ -378,12 +383,12 @@ body
     text-align: center;
     transition: 0.5s;
 }
-.content .contentBx .container .card:hover .info
+.content .contentBx.Inicio .container .card:hover .info
 {
     top: 130px;
     height: 250px;
 }
-.content .contentBx .container .card .info h2
+.content .contentBx.Inicio .container .card .info h2
 {
     font-weight: 500;
     font-size: 1.5em;
@@ -391,18 +396,146 @@ body
     color: #e74c3c;
     margin-bottom: 1em;
 }
-.content .contentBx .container .card .info h3
+.content .contentBx.Inicio .container .card .info h3
 {
     font-size: 1.2em;
     margin-bottom: 1em;
 }
-.content .contentBx .container .card .info p
+.content .contentBx.Inicio .container .card .info p
 {
     font-size: 1em;
 }
 
-
-
+/*Notas*/
+.content .contentBx.Notas
+{
+    overflow: scroll;
+}
+.content .contentBx.Notas::-webkit-scrollbar
+{
+    width: 6px;
+    height: 6px;
+}
+.content .contentBx.Notas::-webkit-scrollbar-thumb
+{
+    background: #e74c3c;
+    border-radius: 25px;
+}
+.content .contentBx.Notas .Opciones
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    font-size: 1em;
+}
+.content .contentBx.Notas .Opciones p
+{
+    margin: 5px;
+}
+.content .contentBx.Notas .Opciones select
+{
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 15px;
+    border: 1.9px solid lightgray;
+    border-radius: 10px;
+    color: #39325A;
+    outline: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background: #fff;
+    text-align: center;
+}
+.content .contentBx.Notas .Opciones select option
+{
+    background: #fff;
+}
+.content .contentBx.Notas table
+{
+    margin-top: 25px;
+    width:max-content;
+}
+.content .contentBx.Notas table tr.NombreInstitucion
+{
+    text-transform: uppercase;
+    font-size: 2em;
+    outline: 2px solid #e74c3c;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.content .contentBx.Notas table tr.InformacionNotas
+{
+    text-transform: uppercase;
+    outline: 2px solid #e74c3c;
+    font-size: 0.9em;
+}
+.content .contentBx.Notas table tr.InformacionNotas th .contenedorInfo
+{
+    display: flex;
+    justify-content:space-around;
+}
+.content .contentBx.Notas table tr.InformacionNotas th .contenedorInfo .InformacionDocente
+{
+    display: flex;
+    align-items: center;
+}
+.content .contentBx.Notas table tr.InformacionNotas th .contenedorInfo .InformacionDocente p
+{
+    justify-content: center;
+    margin: 5px;
+}
+.content .contentBx.Notas table tr.InformacionTareas
+{
+    text-transform: uppercase;
+}
+.content .contentBx.Notas table tr.InformacionTareas th.TareaFecha
+{
+    width: 350px;
+    height: 125px;
+    outline: 2px solid #e74c3c;
+}
+.content .contentBx.Notas table tr.InformacionTareas th:not(.TareaFecha)
+{
+    width: 125px;
+    outline: 2px solid #e74c3c;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.content .contentBx.Notas table tr.InformacionTareas th:not(.TareaFecha) p
+{
+    margin: 0;
+    font-size: 14px;
+}
+.content .contentBx.Notas table tr.estudiantes
+{
+    outline: 2px solid #e74c3c;
+}
+.content .contentBx.Notas table tr.estudiantes th.NombreEstudiante
+{
+    text-transform: uppercase;
+}
+.content .contentBx.Notas table tr.estudiantes:hover th.NombreEstudiante
+{
+    position: fixed;
+    background: #e74c3c;
+    padding-left: 15px;
+    padding-right: 15px;
+    outline: 2px solid #000000;
+}
+.content .contentBx.Notas table tr.estudiantes th:not(.NombreEstudiante)
+{
+    outline: 2px solid #e74c3c;
+}
+.content .contentBx.Notas table tr.Final
+{
+    height: 25px;
+    outline: 2px solid #e74c3c;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
 
 
 .menuToggle

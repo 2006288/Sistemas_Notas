@@ -9,8 +9,8 @@
     <body>
         <div class="menuToggle"></div>
         <div class="sidebar">
-            <input  id="Inicio" type="radio" name="group" checked>
-            <input  id="Notas" type="radio" name="group">
+            <input  id="Inicio" type="radio" name="group">
+            <input  id="Notas" type="radio" name="group" checked>
             <input  id="Tareas" type="radio" name="group">
             <input  id="Desempeño Estudiantes" type="radio" name="group">
             <input  id="Desempeño Curso" type="radio" name="group">
@@ -70,7 +70,7 @@
                 </div>
             </ul>
             <div class="content">
-                <div class="contentBx" for="Inicio">
+                <div class="contentBx Inicio" for="Inicio">
                     <h2>Licenciados</h2>
                     <p>
                         ¡Bienvenido al sistema de notas de la Unidad Educativa Fiscomisional Bernabé de Larraul! <br>
@@ -113,9 +113,92 @@
                         </div>
                     </div>
                 </div>
-                <div class="contentBx" for="Notas">
+                <div class="contentBx Notas" for="Notas">
                     <h2>Notas</h2>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi numquam fugiat nemo, itaque perferendis ea perspiciatis repellendus dolores laudantium beatae minima facere fuga voluptatibus esse tempora? Autem suscipit nobis inventore.</p>
+                    <p>Apartado de Notas de los grados por Asignaturas</p>
+                    <div class="Opciones">
+                            <p>Asignatura:</p>
+                            <select name="Grado" id="Grado">
+                                <option value="Programacion">Programacion</option>
+                                <option value="Diseño Web">Diseño Web</option>
+                                <option value="Soporte">Soporte</option>
+                            </select>
+                            <p>Grado:</p>
+                            <select name="Grado" id="Grado">
+                                <option value="8vo">8vo</option>
+                                <option value="9no">9no</option>
+                                <option value="10mo">10mo</option>
+                                <option value="1BGU">1BGU</option>
+                                <option value="2BGU">2BGU</option>
+                                <option value="3BGU">3BGU</option>
+                            </select>
+                    </div>
+                    <table>
+                        <tr class="NombreInstitucion">
+                            <th colspan="50">
+                                Unidad Educativa Fiscomisional Bernabe de Larraúl
+                            </th>
+                        </tr>
+                        <tr class="InformacionNotas">
+                            <th colspan="50">
+                                <div class="contenedorInfo">
+                                    <div class="InformacionDocente">
+                                        <h3>Docente:</h3>
+                                        <p>Kennet Chungandro</p>
+                                    </div>
+                                    <div class="InformacionDocente">
+                                        <h3>Docente:</h3>
+                                        <p>Programación</p>
+                                    </div>
+                                    <div class="InformacionDocente">
+                                        <h3>Asignatura:</h3>
+                                        <p>2024-2025</p>
+                                    </div>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr class="InformacionTareas">
+                            <th class="TareaFecha">Tareas/Fecha</th>
+                            <th><p>Definicion de variables<br>13-03-2024</p></th>
+                            <th><p>Que es Framework<br>14-03-2024</p></th>
+                            <th><p>Definicion de variables 13-03-2024</p></th>
+                            <th><p>Que es Framework<br>14-03-2024</p></th>
+                            <th><p>Definicion de variables<br>13-03-2024</p></th>
+                            <th><p>Que es Framework <br>14-03-2024</p></th>
+                            <th><p>Definicion de variables<br>13-03-2024</p></th>
+                            <th><p>Que es Framework<br>14-03-2024</p></th>
+                            <th><p>Definicion de variables<br>13-03-2024</p></th>
+                            <th><p>Que es Framework<br>14-03-2024</p></th>
+                        </tr>
+                        <tr class="estudiantes">
+                            <th class="NombreEstudiante">aimacaña zhizhpon anthony xavier</th>
+                            <th class="NotasActividades">10</th>
+                            <th class="NotasActividades">10</th>
+                            <th class="NotasActividades">10</th>
+                            <th class="NotasActividades">10</th>
+                            <th class="NotasActividades">10</th>
+                            <th class="NotasActividades">10</th>
+                            <th class="NotasActividades">10</th>
+                            <th class="NotasActividades">10</th>
+                            <th class="NotasActividades">10</th>
+                            <th class="NotasActividades">10</th>
+                        </tr>
+                        <tr class="estudiantes">
+                            <th class="NombreEstudiante">barreto alava melani yaelin</th>
+                            <th class="NotasActividades">10</th>
+                            <th class="NotasActividades">10</th>
+                            <th class="NotasActividades">10</th>
+                            <th class="NotasActividades">10</th>
+                            <th class="NotasActividades">10</th>
+                            <th class="NotasActividades">10</th>
+                            <th class="NotasActividades">10</th>
+                            <th class="NotasActividades">10</th>
+                            <th class="NotasActividades">10</th>
+                            <th class="NotasActividades">10</th>
+                        </tr>
+                        <tr class="Final">
+                        </tr>
+                    </table>
                 </div>
                 <div class="contentBx" for="Tareas">
                     <h2>Tareas</h2>
