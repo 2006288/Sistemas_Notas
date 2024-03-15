@@ -20,14 +20,17 @@ body
 }
 .sidebar
 {
+    display: flex;
+    flex-direction: column;
     position: fixed;
     width: 80px;
-    height: 100vh;
+    height: 100%;
     background: #fff;
     transition: 0.5s;
     padding-left: 10px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+    justify-content: space-between;
 }
 .sidebar.active
 {
@@ -42,10 +45,7 @@ body
     position: relative;
     list-style: none;
 }
-.sidebar ul li.logo
-{
-    margin-bottom: 50px;
-}
+
 .sidebar ul li.logo .icon
 {
     font-size: 2em;
@@ -234,10 +234,7 @@ body
 {
     background: #fff;
 }
-.bottom
-{
-    margin-top: 99px;
-}
+
 .imgBx
 {
     position: relative;
@@ -260,8 +257,8 @@ body
     position: absolute;
     top: 0;
     left: 83px;
+    width: var(--normal);
     height: 100vh;
-    width: 194.5vh;
     background: #fff;
     transition: 0.5s;
     border-radius: 10px;
@@ -271,7 +268,7 @@ body
 .content.active
 {
     left: 353px;
-    width: 160vh;
+    width: var(--activo);
 }
 .content .contentBx
 {
@@ -460,15 +457,22 @@ body
 {
     text-transform: uppercase;
     font-size: 2em;
+}
+.content .contentBx.Notas table tr.NombreInstitucion th
+{
     outline: 2px solid #e74c3c;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+    background: #e74c3c;
 }
 .content .contentBx.Notas table tr.InformacionNotas
 {
     text-transform: uppercase;
-    outline: 2px solid #e74c3c;
     font-size: 0.9em;
+}
+.content .contentBx.Notas table tr.InformacionNotas th
+{
+    outline: 2px solid #e74c3c;
 }
 .content .contentBx.Notas table tr.InformacionNotas th .contenedorInfo
 {
@@ -492,8 +496,9 @@ body
 .content .contentBx.Notas table tr.InformacionTareas th.TareaFecha
 {
     width: 350px;
-    height: 125px;
+    height: 75px;
     outline: 2px solid #e74c3c;
+    font-size: 13px;
 }
 .content .contentBx.Notas table tr.InformacionTareas th:not(.TareaFecha)
 {
@@ -507,7 +512,7 @@ body
 .content .contentBx.Notas table tr.InformacionTareas th:not(.TareaFecha) p
 {
     margin: 0;
-    font-size: 14px;
+    font-size: 12px;
 }
 .content .contentBx.Notas table tr.estudiantes
 {
@@ -516,6 +521,7 @@ body
 .content .contentBx.Notas table tr.estudiantes th.NombreEstudiante
 {
     text-transform: uppercase;
+    background: rgb(240, 240, 240);
 }
 .content .contentBx.Notas table tr.estudiantes:hover th.NombreEstudiante
 {
@@ -524,6 +530,7 @@ body
     padding-left: 15px;
     padding-right: 15px;
     outline: 2px solid #000000;
+    width: 350px;
 }
 .content .contentBx.Notas table tr.estudiantes th:not(.NombreEstudiante)
 {
@@ -532,12 +539,13 @@ body
 .content .contentBx.Notas table tr.Final
 {
     height: 25px;
+}
+.content .contentBx.Notas table tr.Final th
+{
     outline: 2px solid #e74c3c;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 }
-
-
 .menuToggle
 {
     position: fixed;
@@ -581,4 +589,85 @@ body
 .menuToggle.active::after
 {
     transform: translateY(0px) rotate(-45deg);
+}
+@media screen and (max-width: 768px) {
+    .sidebar
+    {
+        width: 0;
+        padding: 0;
+        transition: 0.5s;
+    }
+    .sidebar input
+    {
+        display: none;
+        transition: 0.5s;
+    }
+    .sidebar ul
+    {
+        display: none;
+        transition: 0.5s;
+    }
+    .sidebar .icons
+    {
+        display: none;
+        transition: 0.5s;
+    }
+    .sidebar.active
+    {
+        width: 350px;
+        padding-left: 10px;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        transition: 0.5s;
+    }
+    .sidebar.active ul
+    {
+        position: relative;
+        display: flex;
+        transition: 0.5s;
+    }
+    .sidebar.active .icons
+    {
+        display: contents;
+        transition: 0.5s;
+        width: 545px;
+    }
+    .sidebar .content
+    {
+        left: 0;
+        transition: 0.5s;
+        z-index: -1;
+        width: var(--normal);
+    }
+    .sidebar.active input:nth-child(1):checked ~ .icons label:nth-child(1)::before,
+    .sidebar.active input:nth-child(2):checked ~ .icons label:nth-child(2)::before,
+    .sidebar.active input:nth-child(3):checked ~ .icons label:nth-child(3)::before,
+    .sidebar.active input:nth-child(4):checked ~ .icons label:nth-child(4)::before,
+    .sidebar.active input:nth-child(5):checked ~ .icons label:nth-child(5)::before,
+    .sidebar.active input:nth-child(6):checked ~ .icons label:nth-child(6)::before
+    {
+        display: none;
+    }
+    .sidebar.active input:nth-child(1):checked ~ .icons label:nth-child(1)::after,
+    .sidebar.active input:nth-child(2):checked ~ .icons label:nth-child(2)::after,
+    .sidebar.active input:nth-child(3):checked ~ .icons label:nth-child(3)::after,
+    .sidebar.active input:nth-child(4):checked ~ .icons label:nth-child(4)::after,
+    .sidebar.active input:nth-child(5):checked ~ .icons label:nth-child(5)::after,
+    .sidebar.active input:nth-child(6):checked ~ .icons label:nth-child(6)::after
+    {
+        display: none;
+    }
+    .menuToggle
+    {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+    }
+    .menuToggle.active
+    {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
 }
