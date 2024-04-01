@@ -7,14 +7,14 @@
         <link rel="stylesheet" href="css/Estudiantes.css">
     </head>
     <body>
+        <input  id="Inicio" type="radio" name="group">
+        <input  id="Notas" type="radio" name="group">
+        <input  id="Tareas" type="radio" name="group">
+        <input  id="Desempeño Estudiantes" type="radio" name="group" checked>
+        <input  id="Desempeño Curso" type="radio" name="group">
+        <input  id="Configuracion" type="radio" name="group">
         <div class="menuToggle"></div>
-        <div class="sidebar">
-            <input  id="Inicio" type="radio" name="group">
-            <input  id="Notas" type="radio" name="group" checked>
-            <input  id="Tareas" type="radio" name="group">
-            <input  id="Desempeño Estudiantes" type="radio" name="group">
-            <input  id="Desempeño Curso" type="radio" name="group">
-            <input  id="Configuracion" type="radio" name="group">
+        <div class="sidebar" id="sidebar">
             <ul>
                 <li class="logo" style="--bg:#333;">
                     <a href="#">
@@ -29,19 +29,19 @@
                     <div class="text">Inicio</div>
                 </label>
                 <label for="Notas" style="--bg:#ffa117;">
-                    <div class="icon"><ion-icon name="person-outline"></ion-icon></div>
+                    <div class="icon"><ion-icon name="clipboard-outline"></ion-icon></div>
                     <div class="text">Notas</div>
                 </label>
                 <label for="Tareas" style="--bg:#0fc70f;">
-                    <div class="icon"><ion-icon name="chatbubble-outline"></ion-icon></div>
+                    <div class="icon"><ion-icon name="document-outline"></ion-icon></div>
                     <div class="text">Tareas</div>
                 </label>
                 <label for="Desempeño Estudiantes" style="--bg:#2196f3;">
-                    <div class="icon"><ion-icon name="bar-chart-outline"></ion-icon></div>
+                    <div class="icon"><ion-icon name="id-card-outline"></ion-icon></div>
                     <div class="text">Desempeño Estudiantes</div>
                 </label>
                 <label for="Desempeño Curso" style="--bg:#b145e9;">
-                    <div class="icon"><ion-icon name="cart-outline"></ion-icon></div>
+                    <div class="icon"><ion-icon name="storefront-outline"></ion-icon></div>
                     <div class="text">Desempeño Curso</div>
                 </label>
                 <label for="Configuracion" style="--bg:#e91e63;">
@@ -69,70 +69,72 @@
                     </li>
                 </div>
             </ul>
-            <div class="content" id="contenedorInformacion">
-                <div class="contentBx Inicio" for="Inicio">
-                    <h2>Licenciados</h2>
-                    <p>
-                        ¡Bienvenido al sistema de notas de la Unidad Educativa Fiscomisional Bernabé de Larraul! <br>
-                        En este apartado se le proporcionara el listado de los Licenciados de la institucion, junto con sus respectivos nombres y asignaturas.
-                    </p>
-                    <div class="container">
-                        <div class="card">
-                            <div class="imgBx">
-                                <img src="img/Licenciados/Kennet Chungandro.jpg">
-                            </div>
-                            <div class="info">
-                                <h2>Kennet Chungandro</h2>
-                                <h3>Asignaturas</h3>
-                                <p>Programacion</p>
-                                <p>Diseño Web</p>
-                                <p>Soporte Tecnico</p>
-                            </div>
+        </div>
+        <div class="content" id="contenedorInformacion">
+            <div class="contentBx Inicio" for="Inicio">
+                <h2>Licenciados</h2>
+                <p>
+                    ¡Bienvenido al sistema de notas de la Unidad Educativa Fiscomisional Bernabé de Larraul! <br>
+                    En este apartado se le proporcionara el listado de los Licenciados de la institucion, junto con sus respectivos nombres y asignaturas.
+                </p>
+                <div class="container">
+                    <div class="card">
+                        <div class="imgBx">
+                            <img src="img/Licenciados/Kennet Chungandro.jpg">
                         </div>
-                        <div class="card">
-                            <div class="imgBx">
-                                <img src="img/Licenciados/Jorge Ortega.jpg">
-                            </div>
-                            <div class="info">
-                                <h2>Jorge Ortega</h2>
-                                <h3>Asignaturas</h3>
-                                <p>Educacion Fisica</p>
-                                <p>Biologia</p>
-                            </div>
+                        <div class="info">
+                            <h2>Kennet Chungandro</h2>
+                            <h3>Asignaturas</h3>
+                            <p>Programacion</p>
+                            <p>Diseño Web</p>
+                            <p>Soporte Tecnico</p>
                         </div>
-                        <div class="card">
-                            <div class="imgBx">
-                                <img src="img/Licenciados/Majito.jpg">
-                            </div>
-                            <div class="info">
-                                <h2>Jorge Ortega</h2>
-                                <h3>Asignaturas</h3>
-                                <p>Educacion Fisica</p>
-                                <p>Biologia</p>
-                            </div>
+                    </div>
+                    <div class="card">
+                        <div class="imgBx">
+                            <img src="img/Licenciados/Jorge Ortega.jpg">
+                        </div>
+                        <div class="info">
+                            <h2>Jorge Ortega</h2>
+                            <h3>Asignaturas</h3>
+                            <p>Educacion Fisica</p>
+                            <p>Biologia</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="imgBx">
+                            <img src="img/Licenciados/Majito.jpg">
+                        </div>
+                        <div class="info">
+                            <h2>Jorge Ortega</h2>
+                            <h3>Asignaturas</h3>
+                            <p>Educacion Fisica</p>
+                            <p>Biologia</p>
                         </div>
                     </div>
                 </div>
-                <div class="contentBx Notas" for="Notas">
-                    <h2>Notas</h2>
-                    <p>Apartado de Notas de los grados por Asignaturas</p>
-                    <div class="Opciones">
-                            <p>Asignatura:</p>
-                            <select name="Grado" id="Grado">
-                                <option value="Programacion">Programacion</option>
-                                <option value="Diseño Web">Diseño Web</option>
-                                <option value="Soporte">Soporte</option>
-                            </select>
-                            <p>Grado:</p>
-                            <select name="Grado" id="Grado">
-                                <option value="8vo">8vo</option>
-                                <option value="9no">9no</option>
-                                <option value="10mo">10mo</option>
-                                <option value="1BGU">1BGU</option>
-                                <option value="2BGU">2BGU</option>
-                                <option value="3BGU">3BGU</option>
-                            </select>
-                    </div>
+            </div>
+            <div class="contentBx Notas" for="Notas">
+                <h2>Notas</h2>
+                <p>Apartado de Notas de los grados por Asignaturas</p>
+                <div class="Opciones">
+                        <p>Grado:</p>
+                        <select name="Grado" id="Grado">
+                            <option value="8vo">8vo</option>
+                            <option value="9no">9no</option>
+                            <option value="10mo">10mo</option>
+                            <option value="1BGU">1BGU</option>
+                            <option value="2BGU">2BGU</option>
+                            <option value="3BGU">3BGU</option>
+                        </select>
+                        <p>Asignatura:</p>
+                        <select name="Grado" id="Grado">
+                            <option value="Programacion">Programacion</option>
+                            <option value="Diseño Web">Diseño Web</option>
+                            <option value="Soporte">Soporte</option>
+                        </select>
+                </div>
+                <div class="containerTable">
                     <table>
                         <tr class="NombreInstitucion">
                             <th colspan="50">
@@ -147,11 +149,11 @@
                                         <p>Kennet Chungandro</p>
                                     </div>
                                     <div class="InformacionDocente">
-                                        <h3>Docente:</h3>
+                                        <h3>Asignatura:</h3>
                                         <p>Programación</p>
                                     </div>
                                     <div class="InformacionDocente">
-                                        <h3>Asignatura:</h3>
+                                        <h3>Año Lectivo:</h3>
                                         <p>2024-2025</p>
                                     </div>
                                 </div>
@@ -169,7 +171,6 @@
                             <th><p>Que es Framework<br>14-03-2024</p></th>
                             <th><p>Definicion de variables<br>13-03-2024</p></th>
                             <th><p>Que es Framework<br>14-03-2024</p></th>
-
                         </tr>
                         <tr class="estudiantes">
                             <th class="NombreEstudiante">aimacaña zhizhpon anthony xavier</th>
@@ -226,37 +227,131 @@
                         
                         <tr class="Final">
                             <th colspan="50">
-
+    
                             </th>
                         </tr>
                     </table>
                 </div>
-                <div class="contentBx" for="Tareas">
+            </div>
+            <div class="contentBx Tareas" for="Tareas">
+                <div class="contenido">
                     <h2>Tareas</h2>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi numquam fugiat nemo, itaque perferendis ea perspiciatis repellendus dolores laudantium beatae minima facere fuga voluptatibus esse tempora? Autem suscipit nobis inventore.</p>
+                    <p>Apartado de Tareas aqui se vera la tareas asignadas y se asignar las tareas para cada curso</p>
+                    <button class="CrearTarea" id="CrearTarea">Crear Tarea</button>
+                    <div class="Opciones">
+                        <p>Grado:</p>
+                        <select name="Grado" id="Grado">
+                            <option value="8vo">8vo</option>
+                            <option value="9no">9no</option>
+                            <option value="10mo">10mo</option>
+                            <option value="1BGU">1BGU</option>
+                            <option value="2BGU">2BGU</option>
+                            <option value="3BGU">3BGU</option>
+                        </select>
+                        <p>Asignatura:</p>
+                        <select name="Asignatura" id="Asignatura">
+                            <option value="Programacion">Programacion</option>
+                            <option value="Diseño Web">Diseño Web</option>
+                            <option value="Soporte">Soporte</option>
+                        </select>
+                    </div>
+                    <div class="TareasCursos">
+                        <table>
+                            <tr class="Head">
+                                <th>Tarea</th>
+                                <th>Fecha de Emision</th>
+                            </tr>
+                            <tr class="Tareas">
+                                <th class="NombreTarea">definicion de variables</th>
+                                <th class="FechaTarea">13-03-2024</th>
+                                <th class="Editar">Editar</th>
+                            </tr>
+                            <tr class="Tareas">
+                                <th class="NombreTarea">definicion de variables</th>
+                                <th class="FechaTarea">13-03-2024</th>
+                                <th class="Editar">Editar</th>
+                            </tr>
+                            <tr class="Tareas">
+                                <th class="NombreTarea">definicion de variables</th>
+                                <th class="FechaTarea">13-03-2024</th>
+                                <th class="Editar">Editar</th>
+                            </tr>
+                            <tr class="Tareas">
+                                <th class="NombreTarea">definicion de variables</th>
+                                <th class="FechaTarea">13-03-2024</th>
+                                <th class="Editar">Editar</th>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-                <div class="contentBx" for="Desempeño Estudiantes">
-                    <h2>Desempeño Estudiantes</h2>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi numquam fugiat nemo, itaque perferendis ea perspiciatis repellendus dolores laudantium beatae minima facere fuga voluptatibus esse tempora? Autem suscipit nobis inventore.</p>
+                <div class="NuevaTarea">
+                    <form>
+                        <div class="CreatTarea">
+                            <p>Nombre de la tarea</p>
+                            <input type="text" required>
+                        </div>
+                        <div class="CreatTarea">
+                            <p>Fecha de la Tarea</p>
+                            <input type="date" required>
+                        </div>
+                        <div class="CreatTarea">
+                            <p>Curso</p>
+                            <select name="Grado" id="Grado">
+                                <option value="8vo">8vo</option>
+                                <option value="9no">9no</option>
+                                <option value="10mo">10mo</option>
+                                <option value="1BGU">1BGU</option>
+                                <option value="2BGU">2BGU</option>
+                                <option value="3BGU">3BGU</option>
+                            </select>
+                        </div>
+                        <div class="CreatTarea">
+                            <p>Asignatura</p>
+                            <select name="Asignatura" id="Asignatura">
+                                <option value="Programacion">Programacion</option>
+                                <option value="Diseño Web">Diseño Web</option>
+                                <option value="Soporte">Soporte</option>
+                            </select>
+                        </div>
+                        <button>Crear</button>
+                    </form>
                 </div>
-                <div class="contentBx" for="Desempeño Curso">
-                    <h2>Desempeño Curso</h2>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi numquam fugiat nemo, itaque perferendis ea perspiciatis repellendus dolores laudantium beatae minima facere fuga voluptatibus esse tempora? Autem suscipit nobis inventore.</p>
+            </div>
+            <div class="contentBx" for="Desempeño Estudiantes">
+                <h2>Desempeño Estudiantes</h2>
+                <p>Muestra el desempeño de los estudiantes</p>
+                <div class="TableDesempeño">
+                    <table border="1">
+                        <tr>
+                            <th>Estudiante</th>
+                            <th></th>
+                        </tr>
+                    </table>
                 </div>
-                <div class="contentBx" for="Configuracion">
-                    <h2>Configuracion</h2>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi numquam fugiat nemo, itaque perferendis ea perspiciatis repellendus dolores laudantium beatae minima facere fuga voluptatibus esse tempora? Autem suscipit nobis inventore.</p>
-                </div>
+            </div>
+            <div class="contentBx" for="Desempeño Curso">
+                <h2>Desempeño Curso</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi numquam fugiat nemo, itaque perferendis ea perspiciatis repellendus dolores laudantium beatae minima facere fuga voluptatibus esse tempora? Autem suscipit nobis inventore.</p>
+            </div>
+            <div class="contentBx" for="Configuracion">
+                <h2>Configuracion</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi numquam fugiat nemo, itaque perferendis ea perspiciatis repellendus dolores laudantium beatae minima facere fuga voluptatibus esse tempora? Autem suscipit nobis inventore.</p>
             </div>
         </div>
         <script>
             let menuToggle = document.querySelector('.menuToggle');
             let sidebar = document.querySelector('.sidebar');
             let content = document.querySelector('.content');
+            let contenido = document.querySelector('.contenido');
+            let NuevaTarea= document.querySelector('.NuevaTarea');
             menuToggle.onclick = function(){
                 menuToggle.classList.toggle('active');
                 sidebar.classList.toggle('active');
                 content.classList.toggle('active');
+            }
+            CrearTarea.onclick = function(){
+                contenido.style.display = "none"
+                NuevaTarea.style.display = "flex"
             }
         </script>
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

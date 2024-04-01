@@ -1,101 +1,989 @@
-
-table
-{
-    margin-top: 25px;
-    min-width: max-content;
-    border-collapse: separate;
-    overflow: auto;
-}
-table tr.NombreInstitucion
-{
-    text-transform: uppercase;
-}
-table tr.NombreInstitucion th
-{
-    outline: 2px solid #e74c3c;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-}
-table tr.NombreInstitucion th h3
-{
-  margin: 0;
-  font-size: 2em;
-}
-table tr.InformacionNotas
-{
-    text-transform: uppercase;
-    font-size: 0.9em;
-}
-table tr.InformacionNotas th
-{
-    outline: 2px solid #e74c3c;
-}
-table tr.InformacionNotas th .contenedorInfo
-{
-    display: flex;
-    justify-content:space-around;
-}
-table tr.InformacionNotas th .contenedorInfo .InformacionDocente
-{
-    display: flex;
-    align-items: center;
-}
-table tr.InformacionNotas th .contenedorInfo .InformacionDocente p
-{
-    justify-content: center;
-    margin: 5px;
-}
-table tr.InformacionTareas
-{
-    text-transform: uppercase;
-}
-table tr.InformacionTareas th.TareaFecha
-{
-    width: 350px;
-    height: 125px;
-    outline: 2px solid #e74c3c;
-}
-table tr.InformacionTareas th:not(.TareaFecha)
-{
-    width: 125px;
-    outline: 2px solid #e74c3c;
-    justify-content: center;
-    align-items: center;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-table tr.InformacionTareas th:not(.TareaFecha) p
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
+*
 {
     margin: 0;
-    font-size: 14px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Anta", sans-serif;
 }
-table tr.estudiantes
+:root
 {
-    outline: 2px solid #e74c3c;
+    --clr: #14161e;
+    --cinnabar-50: #f6f7f9;
+    --cinnabar-100: #ebedf3;
+    --cinnabar-200: #d3d7e4;
+    --cinnabar-300: #adb6cc;
+    --cinnabar-400: #808eb0;
+    --cinnabar-500: #607097;
+    --cinnabar-600: #4c587d;
+    --cinnabar-700: #3e4866;
+    --cinnabar-800: #363e56;
+    --cinnabar-900: #313649;
+    --cinnabar-950: #14161e;
 }
-table tr.estudiantes th.NombreEstudiante
+body
 {
-    text-transform: uppercase;
+    min-height: 100vh;
+    background: var(--clr);
+    display: flex;
+    flex-direction: row;
 }
-table tr.estudiantes:hover th.NombreEstudiante
+.sidebar
 {
+    display: flex;
+    flex-direction: column;
     position: fixed;
-    background: #e74c3c;
+    width: 80px;
+    height: var(--alto);
+    background: var(--cinnabar-50);
+    transition: 0.5s;
+    padding-left: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    justify-content: space-between;
+}
+.sidebar.active
+{
+    width: 350px;
+}
+.sidebar ul
+{
+    position: relative;
+}
+.sidebar ul li
+{
+    position: relative;
+    list-style: none;
+}
+
+.sidebar ul li.logo .icon
+{
+    font-size: 2em;
+    color: var(--clr);
+}
+.sidebar ul li.logo .text
+{
+    font-size: 1.2em;
+    font-weight: 500;
+    color: var(--clr);
+}
+.sidebar ul li a
+{
+    position: relative;
+    display: flex;
+    white-space: nowrap;
+    text-decoration: none;
+}
+.sidebar ul li a .icon
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 60px;
+    height: 70px;
+    font-size: 1.5em;
+    color: #333;
+    transition: 0.5s;
+}
+.sidebar ul li a .text
+{
+    position: relative;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    color: #333;
+    padding-left: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+.sidebar ul li:hover a .icon,
+.sidebar ul li:hover a .text
+{
+    color: var(--bg);
+}
+input
+{
+    appearance: none;
+    display: none;
+}
+.sidebar .icons label
+{
+    position: relative;
+    display: flex;
+    white-space: nowrap;
+    text-decoration: none;
+    cursor: pointer;
+}
+.sidebar .icons label .icon
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 60px;
+    height: 70px;
+    font-size: 1.5em;
+    color: #333;
+    transition: 0.5s;
+    padding-left: 10px;
+}
+.sidebar .icons label .text
+{
+    position: relative;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    color: #333;
+    padding-left: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+input:nth-child(1):checked ~ .sidebar .icons label:nth-child(1),
+input:nth-child(2):checked ~ .sidebar .icons label:nth-child(2),
+input:nth-child(3):checked ~ .sidebar .icons label:nth-child(3),
+input:nth-child(4):checked ~ .sidebar .icons label:nth-child(4),
+input:nth-child(5):checked ~ .sidebar .icons label:nth-child(5),
+input:nth-child(6):checked ~ .sidebar .icons label:nth-child(6)
+{
+    background: var(--clr);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+input:nth-child(1):checked ~ .sidebar .icons label:nth-child(1) .text,
+input:nth-child(2):checked ~ .sidebar .icons label:nth-child(2) .text,
+input:nth-child(3):checked ~ .sidebar .icons label:nth-child(3) .text,
+input:nth-child(4):checked ~ .sidebar .icons label:nth-child(4) .text,
+input:nth-child(5):checked ~ .sidebar .icons label:nth-child(5) .text,
+input:nth-child(6):checked ~ .sidebar .icons label:nth-child(6) .text
+{
+    color: var(--bg);
+}
+input:nth-child(1):checked ~ .sidebar .icons label:nth-child(1) .icon,
+input:nth-child(2):checked ~ .sidebar .icons label:nth-child(2) .icon,
+input:nth-child(3):checked ~ .sidebar .icons label:nth-child(3) .icon,
+input:nth-child(4):checked ~ .sidebar .icons label:nth-child(4) .icon,
+input:nth-child(5):checked ~ .sidebar .icons label:nth-child(5) .icon,
+input:nth-child(6):checked ~ .sidebar .icons label:nth-child(6) .icon
+{
+    color: #fff;
+}
+input:nth-child(1):checked ~ .sidebar .icons label:nth-child(1) .icon::before,
+input:nth-child(2):checked ~ .sidebar .icons label:nth-child(2) .icon::before,
+input:nth-child(3):checked ~ .sidebar .icons label:nth-child(3) .icon::before,
+input:nth-child(4):checked ~ .sidebar .icons label:nth-child(4) .icon::before,
+input:nth-child(5):checked ~ .sidebar .icons label:nth-child(5) .icon::before,
+input:nth-child(6):checked ~ .sidebar .icons label:nth-child(6) .icon::before
+{
+    content: '';
+    position: absolute;
+    inset: 5px;
+    width: 60px;
+    background: var(--bg);
+    border-radius: 50%;
+    transition: 0.5s;
+}
+input:nth-child(1):checked ~ .sidebar .icons label:nth-child(1)::before,
+input:nth-child(2):checked ~ .sidebar .icons label:nth-child(2)::before,
+input:nth-child(3):checked ~ .sidebar .icons label:nth-child(3)::before,
+input:nth-child(4):checked ~ .sidebar .icons label:nth-child(4)::before,
+input:nth-child(5):checked ~ .sidebar .icons label:nth-child(5)::before,
+input:nth-child(6):checked ~ .sidebar .icons label:nth-child(6)::before
+{
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 5px 5px 0 5px var(--clr);
+    background: transparent;
+}
+input:nth-child(1):checked ~ .sidebar .icons label:nth-child(1)::after,
+input:nth-child(2):checked ~ .sidebar .icons label:nth-child(2)::after,
+input:nth-child(3):checked ~ .sidebar .icons label:nth-child(3)::after,
+input:nth-child(4):checked ~ .sidebar .icons label:nth-child(4)::after,
+input:nth-child(5):checked ~ .sidebar .icons label:nth-child(5)::after,
+input:nth-child(6):checked ~ .sidebar .icons label:nth-child(6)::after
+{
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 5px -5px 0 5px var(--clr);
+    background: transparent;
+}
+.sidebar .icons label:hover .text,
+.sidebar .icons label:hover .icon
+{
+    color: var(--bg);
+}
+input:nth-child(1):checked ~ .sidebar .icons label:nth-child(1):hover .icon,
+input:nth-child(2):checked ~ .sidebar .icons label:nth-child(2):hover .icon,
+input:nth-child(3):checked ~ .sidebar .icons label:nth-child(3):hover .icon,
+input:nth-child(4):checked ~ .sidebar .icons label:nth-child(4):hover .icon,
+input:nth-child(5):checked ~ .sidebar .icons label:nth-child(5):hover .icon,
+input:nth-child(6):checked ~ .sidebar .icons label:nth-child(6):hover .icon
+{
+    color: var(--bg);
+}
+input:nth-child(1):checked ~ .sidebar .icons label:nth-child(1):hover .icon::before,
+input:nth-child(2):checked ~ .sidebar .icons label:nth-child(2):hover .icon::before,
+input:nth-child(3):checked ~ .sidebar .icons label:nth-child(3):hover .icon::before,
+input:nth-child(4):checked ~ .sidebar .icons label:nth-child(4):hover .icon::before,
+input:nth-child(5):checked ~ .sidebar .icons label:nth-child(5):hover .icon::before,
+input:nth-child(6):checked ~ .sidebar .icons label:nth-child(6):hover .icon::before
+{
+    background: #fff;
+}
+
+.imgBx
+{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.imgBx img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.content
+{
+    position: absolute;
+    left: 83px;
+    width: var(--normal);
+    height: var(--alto);
+    background: var(--cinnabar-50);
+    transition: 0.5s;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.content.active
+{
+    left: 353px;
+    width: var(--activo);
+}
+.content .contentBx
+{
+  position: absolute;
+  inset: 0;
+  padding: 50px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+input:nth-child(1):checked ~ .content .contentBx:nth-child(1),
+input:nth-child(2):checked ~ .content .contentBx:nth-child(2),
+input:nth-child(3):checked ~ .content .contentBx:nth-child(3),
+input:nth-child(4):checked ~ .content .contentBx:nth-child(4),
+input:nth-child(5):checked ~ .content .contentBx:nth-child(5),
+input:nth-child(6):checked ~ .content .contentBx:nth-child(6)
+{
+  visibility: visible;
+  opacity: 1;
+}
+
+.content .contentBx h2
+{
+  text-transform: uppercase;
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  color: var(--cinnabar-950);
+}
+.content .contentBx p
+{
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  color: var(--cinnabar-800);
+}
+/*Inicio*/
+.content .contentBx.Inicio
+{
+  overflow: auto;
+}
+.content .contentBx.Inicio::-webkit-scrollbar
+{
+  width: 6px;
+}
+.content .contentBx.Inicio::-webkit-scrollbar-thumb
+{
+  background: var(--cinnabar-950);
+  border-radius: 25px;
+}
+.content .contentBx.Inicio::-webkit-scrollbar-track
+{
+  margin: 10px;
+}
+.content .contentBx.Inicio .container
+{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 100px 50px;
+  padding: 100px 50px;
+}
+.content .contentBx.Inicio .container .card
+{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 350px;
+  height: 300px;
+  background: var(--cinnabar-50);
+  border-radius: 20px;
+  box-shadow: 0 35px 90px rgba(0, 0, 0,0.15);
+  transition: 0.5s;
+}
+.content .contentBx.Inicio .container .card:hover
+{
+  height: 350px;
+}
+.content .contentBx.Inicio .container .card .imgBx
+{
+  position: absolute;
+  top: 20px;
+  width: 300px;
+  height: 220px;
+  overflow: hidden;
+  background: #333;
+  border-radius: 12px;
+  transition: 0.5s;
+  box-shadow: 0 15px 45px rgba(0, 0, 0,0.2);
+}
+.content .contentBx.Inicio .container .card:hover .imgBx
+{
+  top: -100px;
+  scale: 0.75;
+}
+.content .contentBx.Inicio .container .card:hover .imgBx img
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.content .contentBx.Inicio .container .card .info
+{
+  position: absolute;
+  top: 252px;
+  width: 100%;
+  height: 35px;
+  padding: 0 30px;
+  overflow: hidden;
+  text-align: center;
+  transition: 0.5s;
+}
+.content .contentBx.Inicio .container .card:hover .info
+{
+  top: 130px;
+  height: 250px;
+}
+.content .contentBx.Inicio .container .card .info h2
+{
+  font-weight: 600;
+  font-size: 1.5em;
+  text-transform: capitalize;
+  color: var(--cinnabar-700);
+  margin-bottom: 1em;
+}
+.content .contentBx.Inicio .container .card .info h3
+{
+  font-weight: 600;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    color: var(--cinnabar-600);
+}
+.content .contentBx.Inicio .container .card .info p
+{
+    font-size: 1em;
+    color: var(--cinnabar-500);
+}
+
+/*Notas*/
+.content .contentBx.Notas
+{
+    overflow: scroll;
+}
+.content .contentBx.Notas::-webkit-scrollbar
+{
+    width: 6px;
+    height: 6px;
+}
+.content .contentBx.Notas::-webkit-scrollbar-thumb
+{
+    background: var(--cinnabar-600);
+    border-radius: 5px;
+}
+.content .contentBx.Notas .Opciones
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    font-size: 1em;
+    margin: 15px 10px;
+}
+.content .contentBx.Notas .Opciones p
+{
+    margin: 5px;
+}
+.content .contentBx.Notas .Opciones select
+{
     padding-left: 15px;
     padding-right: 15px;
-    outline: 2px solid #000000;
+    font-size: 15px;
+    border: 1.9px solid var(--cinnabar-200);
+    border-radius: 10px;
+    color: #39325A;
+    outline: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background: var(--cinnabar-100);
+    text-align: center;
 }
-table tr.estudiantes th:not(.NombreEstudiante)
+.content .contentBx.Notas .Opciones select option
 {
-    outline: 2px solid #e74c3c;
+    background: var(--cinnabar-50);
 }
-table tr.Final
+.content .contentBx.Notas main.table .table_body table,
+.content .contentBx.Notas main.table .table_body table thead tr th,
+.content .contentBx.Notas main.table .table_body table tbody tr td
 {
-    height: 25px;
+  border-collapse: collapse;
+  padding: 1rem;
 }
-table tr.Final th
+.content .contentBx.Notas main.table
 {
-    outline: 2px solid #e74c3c;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+  width: 100%;
+  height: max-content;
+  background-color: var(--cinnabar-50);
+
+  backdrop-filter: blur(7px);
+  box-shadow: 0 .4rem .8rem #0005;
+  border-radius: .8rem;
+
+  overflow: hidden;
+}
+
+.content .contentBx.Notas main.table .table_header
+{
+  width: 100%;
+  height: 10%;
+  background-color: var(--cinnabar-50);
+  padding: .8rem 1rem;
+  text-align: center;
+}
+.content .contentBx.Notas main.table .table_body
+{
+  width: 95%;
+  max-height: calc(89% - .8rem);
+  background: var(--cinnabar-50);
+
+  margin: .8rem auto;
+  border-radius: .6rem;
+  overflow: auto;
+}
+.content .contentBx.Notas main.table .table_body::-webkit-scrollbar
+{
+  width: 0.5rem;
+  height: 0.5rem;
+}
+.content .contentBx.Notas main.table .table_body::-webkit-scrollbar-thumb
+{
+  border-radius: .5rem;
+  background: var(--cinnabar-600);
+  visibility: hidden;
+}
+.content .contentBx.Notas main.table .table_body:hover::-webkit-scrollbar-thumb
+{
+  visibility: visible;
+}
+.content .contentBx.Notas main.table .table_body table
+{
+  width: max-content;
+}
+.content .contentBx.Notas main.table .table_body thead tr th
+{
+  position: sticky;
+  top: 0;
+  left: 0;
+  text-align: center;
+  background: var(--cinnabar-200);
+  min-width: 250px;
+}
+.content .contentBx.Notas main.table .table_body thead tr th .Tareas
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.content .contentBx.Notas main.table .table_body thead tr th .Tareas .FechaTareas
+{
+  display: flex;
+  flex-direction: row;
+  font-size: 0.8em;
+  justify-content: space-between;
+  width: 70%;
+}
+.content .contentBx.Notas main.table .table_body tbody tr:nth-child(even)
+{
+  background-color: var(--cinnabar-100);
+}
+.content .contentBx.Notas main.table .table_body tbody tr td
+{
+  text-align: center;
+}
+.content .contentBx.Notas main.table .table_body tbody tr td.estudiante
+{
+  width: 450px;
+  color: var(--cinnabar-950);
+}
+.content .contentBx.Notas main.table .table_body tbody tr:hover td.estudiante
+{
+  position: fixed;
+  background: linear-gradient(270deg,var(--cinnabar-100),var(--cinnabar-300));
+}
+/*Tareas*/
+.content .contentBx.Tareas
+{
+  overflow-y: scroll;
+}
+.content .contentBx.Tareas .contenido button
+{
+  background: var(--cinnabar-200);
+  width: 150px;
+  height: 50px;
+  border-radius: 50px;
+  border: none;
+}
+.content .contentBx.Tareas .contenido button:hover
+{
+    background: var(--cinnabar-300);
+}
+.content .contentBx.Tareas .contenido .Opciones
+{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  font-size: 1em;
+  margin: 15px 10px;
+}
+.content .contentBx.Tareas .contenido .Opciones p
+{
+    margin: 5px;
+}
+.content .contentBx.Tareas .contenido .Opciones select
+{
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 15px;
+  border: 1.9px solid var(--cinnabar-200);
+  border-radius: 10px;
+  color: #39325A;
+  outline: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: var(--cinnabar-100);
+  text-align: center;
+}
+/*Tabla De tareas*/
+.content .contentBx.Tareas main.table .table_body table,
+.content .contentBx.Tareas main.table .table_body table thead tr th,
+.content .contentBx.Tareas main.table .table_body table tbody tr td
+{
+  border-collapse: collapse;
+  padding: 1rem;
+}
+.content .contentBx.Tareas main.table
+{
+  width: 100%;
+  height: max-content;
+  background-color: #fff5;
+
+  backdrop-filter: blur(7px);
+  box-shadow: 0 .4rem .8rem #0005;
+  border-radius: .8rem;
+
+  overflow: hidden;
+}
+
+.content .contentBx.Tareas main.table .table_header
+{
+  width: 100%;
+  height: 10%;
+  background-color: #fff4;
+  padding: .8rem 1rem;
+}
+.content .contentBx.Tareas main.table .table_body
+{
+  width: 95%;
+  max-height: calc(89% - .8rem);
+  background: #fffb;
+
+  margin: .8rem auto;
+  border-radius: .6rem;
+  overflow: auto;
+}
+.content .contentBx.Tareas main.table .table_body::-webkit-scrollbar
+{
+  width: 0.5rem;
+  height: 0.5rem;
+}
+.content .contentBx.Tareas main.table .table_body::-webkit-scrollbar-thumb
+{
+  border-radius: .5rem;
+  background: #0004;
+  visibility: hidden;
+}
+.content .contentBx.Tareas main.table .table_body:hover::-webkit-scrollbar-thumb
+{
+  visibility: visible;
+}
+.content .contentBx.Tareas main.table .table_body table
+{
+  width: 100%;
+}
+.content .contentBx.Tareas main.table .table_body thead th
+{
+  position: sticky;
+  top: 0;
+  left: 0;
+  text-align: center;
+  background: #d5d1defe;
+}
+.content .contentBx.Tareas main.table .table_body tbody tr:nth-child(even)
+{
+  background-color: #0000000b;
+}
+.content .contentBx.Tareas main.table .table_body tbody tr:hover
+{
+  background-color: #fff6;
+}
+.content .contentBx.Tareas main.table .table_body tbody tr td
+{
+  text-align: center;
+}
+.content .contentBx.Tareas .NuevaTarea
+{
+    min-height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.content .contentBx.Tareas .NuevaTarea form
+{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 1.5em;
+}
+.content .contentBx.Tareas .NuevaTarea form .CreatTarea
+{
+    margin: 25px;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.content .contentBx.Tareas .NuevaTarea form .CreatTarea p
+{
+    margin: 0px;
+    text-transform: uppercase;
+    color: var(--cinnabar-600);
+}
+.content .contentBx.Tareas .NuevaTarea form .CreatTarea input
+{
+    display: flex;
+    margin-left: 10px;
+    border: 0;
+    outline: 2px solid var(--cinnabar-200);
+    border-radius: 20px;
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: var(--cinnabar-100);
+}
+.content .contentBx.Tareas .NuevaTarea form .CreatTarea select
+{
+    margin-left: 10px;
+    border-radius: 10px;
+    padding: 1px 10px;
+    border: 2px solid var(--cinnabar-200);
+    border-radius: 10px;
+    color: #39325A;
+    outline: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background: var(--cinnabar-100);
+    text-align: center;
+}
+.content .contentBx.Tareas .NuevaTarea form button
+{
+    background: var(--cinnabar-500);
+    padding: 15px 20px;
+    border-radius: 50px;
+    border: none;
+}
+.content .contentBx.Tareas .NuevaTarea form button:hover
+{
+    background: var(--cinnabar-400);
+}
+.menuToggle
+{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    min-height: 50px;
+    background: #31a4ff;
+    z-index: 1000;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menuToggle::before
+{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    transform: translateY(-9px);
+    transition: 0.5s;
+    box-shadow: 0 9px 0 #fff;
+}
+.menuToggle::after
+{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    transform: translateY(9px);
+    transition: 0.5s;
+}
+.menuToggle.active::before
+{
+    transform: translateY(0px) rotate(45deg);
+    box-shadow: 0 0 0 #fff;
+}
+.menuToggle.active::after
+{
+    transform: translateY(0px) rotate(-45deg);
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .sidebar
+    {
+        display: none;
+    }
+    .content
+    {
+        left: 0;    
+        height: var(--alto);
+        border-radius: 10px;
+    }
+    .sidebar.active
+    {
+        display: flex;
+        height: var(--alto);
+        width: var(--normal);
+        z-index: 1;
+    }
+    .content.active
+    {
+        position: absolute;
+        left: 0;
+        height: var(--alto);
+        width: var(--normal);
+    }
+    input:nth-child(1):checked ~ .sidebar .icons label:nth-child(1)::before,
+    input:nth-child(2):checked ~ .sidebar .icons label:nth-child(2)::before,
+    input:nth-child(3):checked ~ .sidebar .icons label:nth-child(3)::before,
+    input:nth-child(4):checked ~ .sidebar .icons label:nth-child(4)::before,
+    input:nth-child(5):checked ~ .sidebar .icons label:nth-child(5)::before,
+    input:nth-child(6):checked ~ .sidebar .icons label:nth-child(6)::before
+    {
+        display: none;
+    }
+    input:nth-child(1):checked ~ .sidebar .icons label:nth-child(1)::after,
+    input:nth-child(2):checked ~ .sidebar .icons label:nth-child(2)::after,
+    input:nth-child(3):checked ~ .sidebar .icons label:nth-child(3)::after,
+    input:nth-child(4):checked ~ .sidebar .icons label:nth-child(4)::after,
+    input:nth-child(5):checked ~ .sidebar .icons label:nth-child(5)::after,
+    input:nth-child(6):checked ~ .sidebar .icons label:nth-child(6)::after
+    {
+        display: none;
+    }
+    .content .contentBx
+    {
+        padding: 2em;
+    }
+    /*Inicio*/
+    .content .contentBx.Inicio .container
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 100px 50px;
+        padding: 100px 0px;
+    }
+    .content .contentBx.Inicio .container .card
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width: 320px;
+        height: 300px;
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 35px 90px rgba(0, 0, 0,0.15);
+        transition: 0.5s;
+    }
+    .content .contentBx.Inicio .container .card:hover
+    {
+        height: 320px;
+    }
+    .content .contentBx.Inicio .container .card .imgBx
+    {
+        position: absolute;
+        top: 20px;
+        width: 270px;
+        height: 220px;
+        overflow: hidden;
+        background: #333;
+        border-radius: 12px;
+        transition: 0.5s;
+        box-shadow: 0 15px 45px rgba(0, 0, 0,0.2);
+    }
+    .content .contentBx.Inicio .container .card:hover .imgBx
+    {
+        top: -100px;
+        scale: 0.75;
+    }
+    .content .contentBx.Inicio .container .card:hover .imgBx img
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .content .contentBx.Inicio .container .card .info
+    {
+        position: absolute;
+        top: 252px;
+        width: 100%;
+        height: 35px;
+        padding: 0 30px;
+        overflow: hidden;
+        text-align: center;
+        transition: 0.5s;
+    }
+    .content .contentBx.Inicio .container .card:hover .info
+    {
+        top: 130px;
+        height: 250px;
+    }
+    .content .contentBx.Inicio .container .card .info h2
+    {
+        font-weight: 900;
+        font-size: 1.2em;
+        text-transform: capitalize;
+        color: var(--cinnabar-600);
+        margin-bottom: 1em;
+    }
+    .content .contentBx.Inicio .container .card .info h3
+    {
+        font-size: 1em;
+        margin-bottom: 1em;
+        color: var(--cinnabar-500);
+    }
+    .content .contentBx.Inicio .container .card .info p
+    {
+        font-size: 0.8em;
+        color: var(--cinnabar-400);
+    }
+
+    /*Notas*/
+    .content .contentBx.Notas .Opciones
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    .content .contentBx.Notas table tr.estudiantes:hover th.NombreEstudiante
+    {
+        position: fixed;
+        background: #e74c3c;
+        outline: 2px solid #000000;
+        width: 50%;
+        height: 20px;
+        overflow: hidden;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    /*Tareas*/
+    .content .contentBx.Tareas .Opciones
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    .content .contentBx.Tareas .TareasCursos table tr.Head
+    {
+        font-size: 12px;
+    }
+    .content .contentBx.Tareas .TareasCursos table tr.Tareas
+    {
+        font-size: 12px;
+    }
+    .content .contentBx.Tareas .TareasCursos table tr.Tareas th.NombreTarea
+    {
+        text-transform: uppercase;
+    }
+    .content .contentBx.Tareas .TareasCursos table tr.Tareas th.FechaTarea
+    {
+        width: 100px;
+    }
 }

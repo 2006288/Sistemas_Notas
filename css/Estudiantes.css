@@ -9,7 +9,18 @@
 }
 :root
 {
-    --clr: #14161e
+    --clr: #14161e;
+    --cinnabar-50: #fef3f2;
+    --cinnabar-100: #fde5e3;
+    --cinnabar-200: #fcd0cc;
+    --cinnabar-300: #f9b0a8;
+    --cinnabar-400: #f38276;
+    --cinnabar-500: #e74c3c;
+    --cinnabar-600: #d53d2d;
+    --cinnabar-700: #b33022;
+    --cinnabar-800: #942b20;
+    --cinnabar-900: #7b2921;
+    --cinnabar-950: #43110c;
 }
 body
 {
@@ -24,8 +35,8 @@ body
     flex-direction: column;
     position: fixed;
     width: 80px;
-    height: 100%;
-    background: #fff;
+    height: var(--alto);
+    background: var(--cinnabar-50);
     transition: 0.5s;
     padding-left: 10px;
     border-top-right-radius: 10px;
@@ -94,7 +105,7 @@ body
 {
     color: var(--bg);
 }
-.sidebar input
+input
 {
     appearance: none;
     display: none;
@@ -133,41 +144,41 @@ body
     letter-spacing: 0.05em;
     transition: 0.5s;
 }
-.sidebar input:nth-child(1):checked ~ .icons label:nth-child(1),
-.sidebar input:nth-child(2):checked ~ .icons label:nth-child(2),
-.sidebar input:nth-child(3):checked ~ .icons label:nth-child(3),
-.sidebar input:nth-child(4):checked ~ .icons label:nth-child(4),
-.sidebar input:nth-child(5):checked ~ .icons label:nth-child(5),
-.sidebar input:nth-child(6):checked ~ .icons label:nth-child(6)
+input:nth-child(1):checked ~ .sidebar .icons label:nth-child(1),
+input:nth-child(2):checked ~ .sidebar .icons label:nth-child(2),
+input:nth-child(3):checked ~ .sidebar .icons label:nth-child(3),
+input:nth-child(4):checked ~ .sidebar .icons label:nth-child(4),
+input:nth-child(5):checked ~ .sidebar .icons label:nth-child(5),
+input:nth-child(6):checked ~ .sidebar .icons label:nth-child(6)
 {
     background: var(--clr);
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
 }
-.sidebar input:nth-child(1):checked ~ .icons label:nth-child(1) .text,
-.sidebar input:nth-child(2):checked ~ .icons label:nth-child(2) .text,
-.sidebar input:nth-child(3):checked ~ .icons label:nth-child(3) .text,
-.sidebar input:nth-child(4):checked ~ .icons label:nth-child(4) .text,
-.sidebar input:nth-child(5):checked ~ .icons label:nth-child(5) .text,
-.sidebar input:nth-child(6):checked ~ .icons label:nth-child(6) .text
+input:nth-child(1):checked ~ .sidebar .icons label:nth-child(1) .text,
+input:nth-child(2):checked ~ .sidebar .icons label:nth-child(2) .text,
+input:nth-child(3):checked ~ .sidebar .icons label:nth-child(3) .text,
+input:nth-child(4):checked ~ .sidebar .icons label:nth-child(4) .text,
+input:nth-child(5):checked ~ .sidebar .icons label:nth-child(5) .text,
+input:nth-child(6):checked ~ .sidebar .icons label:nth-child(6) .text
 {
     color: var(--bg);
 }
-.sidebar input:nth-child(1):checked ~ .icons label:nth-child(1) .icon,
-.sidebar input:nth-child(2):checked ~ .icons label:nth-child(2) .icon,
-.sidebar input:nth-child(3):checked ~ .icons label:nth-child(3) .icon,
-.sidebar input:nth-child(4):checked ~ .icons label:nth-child(4) .icon,
-.sidebar input:nth-child(5):checked ~ .icons label:nth-child(5) .icon,
-.sidebar input:nth-child(6):checked ~ .icons label:nth-child(6) .icon
+input:nth-child(1):checked ~ .sidebar .icons label:nth-child(1) .icon,
+input:nth-child(2):checked ~ .sidebar .icons label:nth-child(2) .icon,
+input:nth-child(3):checked ~ .sidebar .icons label:nth-child(3) .icon,
+input:nth-child(4):checked ~ .sidebar .icons label:nth-child(4) .icon,
+input:nth-child(5):checked ~ .sidebar .icons label:nth-child(5) .icon,
+input:nth-child(6):checked ~ .sidebar .icons label:nth-child(6) .icon
 {
     color: #fff;
 }
-.sidebar input:nth-child(1):checked ~ .icons label:nth-child(1) .icon::before,
-.sidebar input:nth-child(2):checked ~ .icons label:nth-child(2) .icon::before,
-.sidebar input:nth-child(3):checked ~ .icons label:nth-child(3) .icon::before,
-.sidebar input:nth-child(4):checked ~ .icons label:nth-child(4) .icon::before,
-.sidebar input:nth-child(5):checked ~ .icons label:nth-child(5) .icon::before,
-.sidebar input:nth-child(6):checked ~ .icons label:nth-child(6) .icon::before
+input:nth-child(1):checked ~ .sidebar .icons label:nth-child(1) .icon::before,
+input:nth-child(2):checked ~ .sidebar .icons label:nth-child(2) .icon::before,
+input:nth-child(3):checked ~ .sidebar .icons label:nth-child(3) .icon::before,
+input:nth-child(4):checked ~ .sidebar .icons label:nth-child(4) .icon::before,
+input:nth-child(5):checked ~ .sidebar .icons label:nth-child(5) .icon::before,
+input:nth-child(6):checked ~ .sidebar .icons label:nth-child(6) .icon::before
 {
     content: '';
     position: absolute;
@@ -177,12 +188,12 @@ body
     border-radius: 50%;
     transition: 0.5s;
 }
-.sidebar input:nth-child(1):checked ~ .icons label:nth-child(1)::before,
-.sidebar input:nth-child(2):checked ~ .icons label:nth-child(2)::before,
-.sidebar input:nth-child(3):checked ~ .icons label:nth-child(3)::before,
-.sidebar input:nth-child(4):checked ~ .icons label:nth-child(4)::before,
-.sidebar input:nth-child(5):checked ~ .icons label:nth-child(5)::before,
-.sidebar input:nth-child(6):checked ~ .icons label:nth-child(6)::before
+input:nth-child(1):checked ~ .sidebar .icons label:nth-child(1)::before,
+input:nth-child(2):checked ~ .sidebar .icons label:nth-child(2)::before,
+input:nth-child(3):checked ~ .sidebar .icons label:nth-child(3)::before,
+input:nth-child(4):checked ~ .sidebar .icons label:nth-child(4)::before,
+input:nth-child(5):checked ~ .sidebar .icons label:nth-child(5)::before,
+input:nth-child(6):checked ~ .sidebar .icons label:nth-child(6)::before
 {
     content: '';
     position: absolute;
@@ -194,12 +205,12 @@ body
     box-shadow: 5px 5px 0 5px var(--clr);
     background: transparent;
 }
-.sidebar input:nth-child(1):checked ~ .icons label:nth-child(1)::after,
-.sidebar input:nth-child(2):checked ~ .icons label:nth-child(2)::after,
-.sidebar input:nth-child(3):checked ~ .icons label:nth-child(3)::after,
-.sidebar input:nth-child(4):checked ~ .icons label:nth-child(4)::after,
-.sidebar input:nth-child(5):checked ~ .icons label:nth-child(5)::after,
-.sidebar input:nth-child(6):checked ~ .icons label:nth-child(6)::after
+input:nth-child(1):checked ~ .sidebar .icons label:nth-child(1)::after,
+input:nth-child(2):checked ~ .sidebar .icons label:nth-child(2)::after,
+input:nth-child(3):checked ~ .sidebar .icons label:nth-child(3)::after,
+input:nth-child(4):checked ~ .sidebar .icons label:nth-child(4)::after,
+input:nth-child(5):checked ~ .sidebar .icons label:nth-child(5)::after,
+input:nth-child(6):checked ~ .sidebar .icons label:nth-child(6)::after
 {
     content: '';
     position: absolute;
@@ -216,21 +227,21 @@ body
 {
     color: var(--bg);
 }
-.sidebar input:nth-child(1):checked ~ .icons label:nth-child(1):hover .icon,
-.sidebar input:nth-child(2):checked ~ .icons label:nth-child(2):hover .icon,
-.sidebar input:nth-child(3):checked ~ .icons label:nth-child(3):hover .icon,
-.sidebar input:nth-child(4):checked ~ .icons label:nth-child(4):hover .icon,
-.sidebar input:nth-child(5):checked ~ .icons label:nth-child(5):hover .icon,
-.sidebar input:nth-child(6):checked ~ .icons label:nth-child(6):hover .icon
+input:nth-child(1):checked ~ .sidebar .icons label:nth-child(1):hover .icon,
+input:nth-child(2):checked ~ .sidebar .icons label:nth-child(2):hover .icon,
+input:nth-child(3):checked ~ .sidebar .icons label:nth-child(3):hover .icon,
+input:nth-child(4):checked ~ .sidebar .icons label:nth-child(4):hover .icon,
+input:nth-child(5):checked ~ .sidebar .icons label:nth-child(5):hover .icon,
+input:nth-child(6):checked ~ .sidebar .icons label:nth-child(6):hover .icon
 {
     color: var(--bg);
 }
-.sidebar input:nth-child(1):checked ~ .icons label:nth-child(1):hover .icon::before,
-.sidebar input:nth-child(2):checked ~ .icons label:nth-child(2):hover .icon::before,
-.sidebar input:nth-child(3):checked ~ .icons label:nth-child(3):hover .icon::before,
-.sidebar input:nth-child(4):checked ~ .icons label:nth-child(4):hover .icon::before,
-.sidebar input:nth-child(5):checked ~ .icons label:nth-child(5):hover .icon::before,
-.sidebar input:nth-child(6):checked ~ .icons label:nth-child(6):hover .icon::before
+input:nth-child(1):checked ~ .sidebar .icons label:nth-child(1):hover .icon::before,
+input:nth-child(2):checked ~ .sidebar .icons label:nth-child(2):hover .icon::before,
+input:nth-child(3):checked ~ .sidebar .icons label:nth-child(3):hover .icon::before,
+input:nth-child(4):checked ~ .sidebar .icons label:nth-child(4):hover .icon::before,
+input:nth-child(5):checked ~ .sidebar .icons label:nth-child(5):hover .icon::before,
+input:nth-child(6):checked ~ .sidebar .icons label:nth-child(6):hover .icon::before
 {
     background: #fff;
 }
@@ -255,14 +266,13 @@ body
 .content
 {
     position: absolute;
-    top: 0;
     left: 83px;
     width: var(--normal);
-    height: 100vh;
-    background: #fff;
+    height: var(--alto);
+    background: var(--cinnabar-50);
     transition: 0.5s;
-    border-radius: 10px;
-    margin-right: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .content.active
@@ -278,14 +288,13 @@ body
     visibility: hidden;
     opacity: 0;
     transition: 0.5s;
-    padding: 2em;
 }
-.sidebar input:nth-child(1):checked ~  .content .contentBx:nth-child(1),
-.sidebar input:nth-child(2):checked ~  .content .contentBx:nth-child(2),
-.sidebar input:nth-child(3):checked ~  .content .contentBx:nth-child(3),
-.sidebar input:nth-child(4):checked ~  .content .contentBx:nth-child(4),
-.sidebar input:nth-child(5):checked ~  .content .contentBx:nth-child(5),
-.sidebar input:nth-child(6):checked ~  .content .contentBx:nth-child(6)
+input:nth-child(1):checked ~ .content .contentBx:nth-child(1),
+input:nth-child(2):checked ~ .content .contentBx:nth-child(2),
+input:nth-child(3):checked ~ .content .contentBx:nth-child(3),
+input:nth-child(4):checked ~ .content .contentBx:nth-child(4),
+input:nth-child(5):checked ~ .content .contentBx:nth-child(5),
+input:nth-child(6):checked ~ .content .contentBx:nth-child(6)
 {
     visibility: visible;
     opacity: 1;
@@ -313,8 +322,12 @@ body
 }
 .content .contentBx.Inicio::-webkit-scrollbar-thumb
 {
-    background: #e74c3c;
+    background: var(--cinnabar-600);
     border-radius: 25px;
+}
+.content .contentBx.Inicio::-webkit-scrollbar-track
+{
+    margin: 10px;
 }
 .content .contentBx.Inicio .container
 {
@@ -334,7 +347,7 @@ body
     align-items: flex-start;
     width: 350px;
     height: 300px;
-    background: #fff;
+    background: var(--cinnabar-50);
     border-radius: 20px;
     box-shadow: 0 35px 90px rgba(0, 0, 0,0.15);
     transition: 0.5s;
@@ -390,7 +403,7 @@ body
     font-weight: 500;
     font-size: 1.5em;
     text-transform: capitalize;
-    color: #e74c3c;
+    color: var(--cinnabar-400);
     margin-bottom: 1em;
 }
 .content .contentBx.Inicio .container .card .info h3
@@ -415,8 +428,8 @@ body
 }
 .content .contentBx.Notas::-webkit-scrollbar-thumb
 {
-    background: #e74c3c;
-    border-radius: 25px;
+    background: var(--cinnabar-600);
+    border-radius: 5px;
 }
 .content .contentBx.Notas .Opciones
 {
@@ -435,18 +448,40 @@ body
     padding-left: 15px;
     padding-right: 15px;
     font-size: 15px;
-    border: 1.9px solid lightgray;
+    border: 1.9px solid var(--cinnabar-200);
     border-radius: 10px;
     color: #39325A;
     outline: none;
     -webkit-appearance: none;
     cursor: pointer;
-    background: #fff;
+    background: var(--cinnabar-100);
     text-align: center;
 }
 .content .contentBx.Notas .Opciones select option
 {
-    background: #fff;
+    background: var(--cinnabar-50);
+}
+.content .contentBx.Notas .containerTable
+{
+    max-width: max-content;
+    height: max-content;
+    overflow-x: scroll;
+    border-radius: 15px;
+}
+.content .contentBx.Notas .containerTable::-webkit-scrollbar
+{
+    width: 6px;
+    height: 6px;
+}
+.content .contentBx.Notas .containerTable::-webkit-scrollbar-track
+{
+    margin-left: 25px;
+    margin-right: 25px;
+}
+.content .contentBx.Notas .containerTable::-webkit-scrollbar-thumb
+{
+    background: var(--cinnabar-600);
+    border-radius: 3px;
 }
 .content .contentBx.Notas table
 {
@@ -460,10 +495,10 @@ body
 }
 .content .contentBx.Notas table tr.NombreInstitucion th
 {
-    outline: 2px solid #e74c3c;
+    outline: 2px solid var(--cinnabar-500);
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    background: #e74c3c;
+    background: var(--cinnabar-500);
 }
 .content .contentBx.Notas table tr.InformacionNotas
 {
@@ -472,7 +507,7 @@ body
 }
 .content .contentBx.Notas table tr.InformacionNotas th
 {
-    outline: 2px solid #e74c3c;
+    outline: 2px solid var(--cinnabar-500);
 }
 .content .contentBx.Notas table tr.InformacionNotas th .contenedorInfo
 {
@@ -497,13 +532,13 @@ body
 {
     width: 350px;
     height: 75px;
-    outline: 2px solid #e74c3c;
+    outline: 2px solid var(--cinnabar-500);
     font-size: 13px;
 }
 .content .contentBx.Notas table tr.InformacionTareas th:not(.TareaFecha)
 {
     width: 125px;
-    outline: 2px solid #e74c3c;
+    outline: 2px solid var(--cinnabar-500);
     justify-content: center;
     align-items: center;
     padding-left: 10px;
@@ -516,7 +551,7 @@ body
 }
 .content .contentBx.Notas table tr.estudiantes
 {
-    outline: 2px solid #e74c3c;
+    outline: 2px solid var(--cinnabar-500);
 }
 .content .contentBx.Notas table tr.estudiantes th.NombreEstudiante
 {
@@ -526,15 +561,15 @@ body
 .content .contentBx.Notas table tr.estudiantes:hover th.NombreEstudiante
 {
     position: fixed;
-    background: #e74c3c;
+    background: var(--cinnabar-500);
     padding-left: 15px;
     padding-right: 15px;
-    outline: 2px solid #000000;
+    outline: 2px solid var(--cinnabar-600);
     width: 350px;
 }
 .content .contentBx.Notas table tr.estudiantes th:not(.NombreEstudiante)
 {
-    outline: 2px solid #e74c3c;
+    outline: 2px solid var(--cinnabar-500);
 }
 .content .contentBx.Notas table tr.Final
 {
@@ -542,9 +577,168 @@ body
 }
 .content .contentBx.Notas table tr.Final th
 {
-    outline: 2px solid #e74c3c;
+    outline: 2px solid var(--cinnabar-500);
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
+}
+/*Tareas*/
+.content .contentBx.Tareas .contenido button
+{
+    background: var(--cinnabar-500);
+    width: 150px;
+    height: 50px;
+    border-radius: 50px;
+    border: none;
+}
+.content .contentBx.Tareas .contenido button:hover
+{
+    background: var(--cinnabar-400);
+}
+.content .contentBx.Tareas .contenido .Opciones
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    font-size: 1em;
+    margin: 10px
+}
+.content .contentBx.Tareas .contenido .Opciones p
+{
+    margin: 5px;
+}
+.content .contentBx.Tareas .contenido .Opciones select
+{
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 15px;
+    border: 1.9px solid var(--cinnabar-200);
+    border-radius: 10px;
+    color: #39325A;
+    outline: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background: var(--cinnabar-100);
+    text-align: center;
+}
+.content .contentBx.Tareas .contenido .TareasCursos
+{
+    height: 443px;
+    overflow: auto;
+}
+.content .contentBx.Tareas .contenido .TareasCursos::-webkit-scrollbar
+{
+    width: 6px;
+    height: 6px;
+}
+.content .contentBx.Tareas .contenido .TareasCursos::-webkit-scrollbar-thumb
+{
+    background: var(--cinnabar-600);
+    border-radius: 4px;
+}
+.content .contentBx.Tareas .contenido .TareasCursos::-webkit-scrollbar-track
+{
+    margin: 20px;
+}
+.content .contentBx.Tareas .contenido .TareasCursos table
+{
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+.content .contentBx.Tareas .contenido .TareasCursos table tr.Head
+{
+    outline: 2px solid var(--cinnabar-500);
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    text-transform: uppercase;
+    height: 10px;
+}
+.content .contentBx.Tareas .contenido .TareasCursos table tr.Tareas th
+{
+    outline: 2px solid var(--cinnabar-500);
+    height: 10px;
+}
+.content .contentBx.Tareas .contenido .TareasCursos table tr.Tareas th.NombreTarea
+{
+    text-transform: uppercase;
+}
+.content .contentBx.Tareas .contenido .TareasCursos table tr.Tareas th.Editar
+{
+    background: var(--cinnabar-500);
+}
+.content .contentBx.Tareas .contenido .TareasCursos table tr.Tareas th.Editar:hover
+{
+    background: var(--cinnabar-400);
+    outline: 2px solid var(--cinnabar-400);
+}
+.content .contentBx.Tareas .NuevaTarea
+{
+    min-height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.content .contentBx.Tareas .NuevaTarea form
+{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 1.5em;
+}
+.content .contentBx.Tareas .NuevaTarea form .CreatTarea
+{
+    margin: 25px;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.content .contentBx.Tareas .NuevaTarea form .CreatTarea p
+{
+    margin: 0px;
+    text-transform: uppercase;
+    color: var(--cinnabar-600);
+}
+.content .contentBx.Tareas .NuevaTarea form .CreatTarea input
+{
+    display: flex;
+    margin-left: 10px;
+    border: 0;
+    outline: 2px solid var(--cinnabar-200);
+    border-radius: 20px;
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: var(--cinnabar-100);
+}
+.content .contentBx.Tareas .NuevaTarea form .CreatTarea select
+{
+    margin-left: 10px;
+    border-radius: 10px;
+    padding: 1px 10px;
+    border: 2px solid var(--cinnabar-200);
+    border-radius: 10px;
+    color: #39325A;
+    outline: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background: var(--cinnabar-100);
+    text-align: center;
+}
+.content .contentBx.Tareas .NuevaTarea form button
+{
+    background: var(--cinnabar-500);
+    padding: 15px 20px;
+    border-radius: 50px;
+    border: none;
+}
+.content .contentBx.Tareas .NuevaTarea form button:hover
+{
+    background: var(--cinnabar-400);
 }
 .menuToggle
 {
@@ -590,84 +784,187 @@ body
 {
     transform: translateY(0px) rotate(-45deg);
 }
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 768px) {
     .sidebar
     {
-        width: 0;
-        padding: 0;
-        transition: 0.5s;
-    }
-    .sidebar input
-    {
         display: none;
-        transition: 0.5s;
     }
-    .sidebar ul
+    .content
     {
-        display: none;
-        transition: 0.5s;
-    }
-    .sidebar .icons
-    {
-        display: none;
-        transition: 0.5s;
+        left: 0;    
+        height: var(--alto);
+        border-radius: 10px;
     }
     .sidebar.active
     {
-        width: 350px;
-        padding-left: 10px;
         display: flex;
-        justify-content: space-between;
-        position: absolute;
-        transition: 0.5s;
+        height: var(--alto);
+        width: var(--normal);
+        z-index: 1;
     }
-    .sidebar.active ul
+    .content.active
+    {
+        position: absolute;
+        left: 0;
+        height: var(--alto);
+        width: var(--normal);
+    }
+    input:nth-child(1):checked ~ .sidebar .icons label:nth-child(1)::before,
+    input:nth-child(2):checked ~ .sidebar .icons label:nth-child(2)::before,
+    input:nth-child(3):checked ~ .sidebar .icons label:nth-child(3)::before,
+    input:nth-child(4):checked ~ .sidebar .icons label:nth-child(4)::before,
+    input:nth-child(5):checked ~ .sidebar .icons label:nth-child(5)::before,
+    input:nth-child(6):checked ~ .sidebar .icons label:nth-child(6)::before
+    {
+        display: none;
+    }
+    input:nth-child(1):checked ~ .sidebar .icons label:nth-child(1)::after,
+    input:nth-child(2):checked ~ .sidebar .icons label:nth-child(2)::after,
+    input:nth-child(3):checked ~ .sidebar .icons label:nth-child(3)::after,
+    input:nth-child(4):checked ~ .sidebar .icons label:nth-child(4)::after,
+    input:nth-child(5):checked ~ .sidebar .icons label:nth-child(5)::after,
+    input:nth-child(6):checked ~ .sidebar .icons label:nth-child(6)::after
+    {
+        display: none;
+    }
+    .content .contentBx
+    {
+        padding: 2em;
+    }
+    /*Inicio*/
+    .content .contentBx.Inicio .container
     {
         position: relative;
         display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 100px 50px;
+        padding: 100px 0px;
+    }
+    .content .contentBx.Inicio .container .card
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width: 320px;
+        height: 300px;
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 35px 90px rgba(0, 0, 0,0.15);
         transition: 0.5s;
     }
-    .sidebar.active .icons
+    .content .contentBx.Inicio .container .card:hover
     {
-        display: contents;
-        transition: 0.5s;
-        width: 545px;
+        height: 320px;
     }
-    .sidebar .content
-    {
-        left: 0;
-        transition: 0.5s;
-        z-index: -1;
-        width: var(--normal);
-    }
-    .sidebar.active input:nth-child(1):checked ~ .icons label:nth-child(1)::before,
-    .sidebar.active input:nth-child(2):checked ~ .icons label:nth-child(2)::before,
-    .sidebar.active input:nth-child(3):checked ~ .icons label:nth-child(3)::before,
-    .sidebar.active input:nth-child(4):checked ~ .icons label:nth-child(4)::before,
-    .sidebar.active input:nth-child(5):checked ~ .icons label:nth-child(5)::before,
-    .sidebar.active input:nth-child(6):checked ~ .icons label:nth-child(6)::before
-    {
-        display: none;
-    }
-    .sidebar.active input:nth-child(1):checked ~ .icons label:nth-child(1)::after,
-    .sidebar.active input:nth-child(2):checked ~ .icons label:nth-child(2)::after,
-    .sidebar.active input:nth-child(3):checked ~ .icons label:nth-child(3)::after,
-    .sidebar.active input:nth-child(4):checked ~ .icons label:nth-child(4)::after,
-    .sidebar.active input:nth-child(5):checked ~ .icons label:nth-child(5)::after,
-    .sidebar.active input:nth-child(6):checked ~ .icons label:nth-child(6)::after
-    {
-        display: none;
-    }
-    .menuToggle
-    {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-    }
-    .menuToggle.active
+    .content .contentBx.Inicio .container .card .imgBx
     {
         position: absolute;
-        top: 10px;
-        right: 10px;
+        top: 20px;
+        width: 270px;
+        height: 220px;
+        overflow: hidden;
+        background: #333;
+        border-radius: 12px;
+        transition: 0.5s;
+        box-shadow: 0 15px 45px rgba(0, 0, 0,0.2);
+    }
+    .content .contentBx.Inicio .container .card:hover .imgBx
+    {
+        top: -100px;
+        scale: 0.75;
+    }
+    .content .contentBx.Inicio .container .card:hover .imgBx img
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .content .contentBx.Inicio .container .card .info
+    {
+        position: absolute;
+        top: 252px;
+        width: 100%;
+        height: 35px;
+        padding: 0 30px;
+        overflow: hidden;
+        text-align: center;
+        transition: 0.5s;
+    }
+    .content .contentBx.Inicio .container .card:hover .info
+    {
+        top: 130px;
+        height: 250px;
+    }
+    .content .contentBx.Inicio .container .card .info h2
+    {
+        font-weight: 900;
+        font-size: 1.2em;
+        text-transform: capitalize;
+        color: #e74c3c;
+        margin-bottom: 1em;
+    }
+    .content .contentBx.Inicio .container .card .info h3
+    {
+        font-size: 1em;
+        margin-bottom: 1em;
+    }
+    .content .contentBx.Inicio .container .card .info p
+    {
+        font-size: 0.8em;
+    }
+
+    /*Notas*/
+    .content .contentBx.Notas .Opciones
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    .content .contentBx.Notas table tr.estudiantes:hover th.NombreEstudiante
+    {
+        position: fixed;
+        background: #e74c3c;
+        outline: 2px solid #000000;
+        width: 50%;
+        height: 20px;
+        overflow: hidden;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    /*Tareas*/
+    .content .contentBx.Tareas .Opciones
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    .content .contentBx.Tareas .TareasCursos table tr.Head
+    {
+        font-size: 12px;
+    }
+    .content .contentBx.Tareas .TareasCursos table tr.Tareas
+    {
+        font-size: 12px;
+    }
+    .content .contentBx.Tareas .TareasCursos table tr.Tareas th.NombreTarea
+    {
+        text-transform: uppercase;
+    }
+    .content .contentBx.Tareas .TareasCursos table tr.Tareas th.FechaTarea
+    {
+        width: 100px;
     }
 }

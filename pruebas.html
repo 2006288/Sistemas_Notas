@@ -1,92 +1,464 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sidebar con pestañas</title>
-  <link rel="stylesheet" href="css/pruebas.css">
-</head>
-<body>
-  <div class="container">
-    <table>
-      <tr class="NombreInstitucion">
-          <th colspan="9">
-              <h3>Unidad Educativa Fiscomisional Bernabe de Larraúl</h3>
-          </th>
-      </tr>
-      <tr class="InformacionNotas">
-          <th colspan="9">
-              <div class="contenedorInfo">
-                  <div class="InformacionDocente">
-                      <h3>Docente:</h3>
-                      <p>Kennet Chungandro</p>
-                  </div>
-                  <div class="InformacionDocente">
-                      <h3>Docente:</h3>
-                      <p>Programación</p>
-                  </div>
-                  <div class="InformacionDocente">
-                      <h3>Asignatura:</h3>
-                      <p>2024-2025</p>
-                  </div>
-              </div>
-          </th>
-      </tr>
-      <tr class="InformacionTareas">
-          <th class="TareaFecha">Tareas/Fecha</th>
-          <th><p>Definicion de variables<br>13-03-2024</p></th>
-          <th><p>Que es Framework<br>14-03-2024</p></th>
-          <th><p>Definicion de variables 13-03-2024</p></th>
-          <th><p>Que es Framework<br>14-03-2024</p></th>
-          <th><p>Definicion de variables<br>13-03-2024</p></th>
-          <th><p>Que es Framework <br>14-03-2024</p></th>
-          <th><p>Definicion de variables<br>13-03-2024</p></th>
-          <th><p>Que es Framework<br>14-03-2024</p></th>
-          <th><p>Definicion de variables<br>13-03-2024</p></th>
-          <th><p>Que es Framework<br>14-03-2024</p></th>
-          <th><p>Definicion de variables<br>13-03-2024</p></th>
-          <th><p>Que es Framework<br>14-03-2024</p></th>
-          <th><p>Definicion de variables 13-03-2024</p></th>
-          <th><p>Que es Framework<br>14-03-2024</p></th>
-          <th><p>Definicion de variables<br>13-03-2024</p></th>
-          <th><p>Que es Framework <br>14-03-2024</p></th>
-          <th><p>Definicion de variables<br>13-03-2024</p></th>
-          <th><p>Que es Framework<br>14-03-2024</p></th>
-          <th><p>Definicion de variables<br>13-03-2024</p></th>
-          <th><p>Que es Framework<br>14-03-2024</p></th>
-      </tr>
-      <tr class="estudiantes">
-          <th class="NombreEstudiante">aimacaña zhizhpon anthony xavier</th>
-          <th class="NotasActividades">10</th>
-          <th class="NotasActividades">10</th>
-          <th class="NotasActividades">10</th>
-          <th class="NotasActividades">10</th>
-          <th class="NotasActividades">10</th>
-          <th class="NotasActividades">10</th>
-          <th class="NotasActividades">10</th>
-          <th class="NotasActividades">10</th>
-          <th class="NotasActividades">10</th>
-          <th class="NotasActividades">10</th>
-      </tr>
-      <tr class="estudiantes">
-          <th class="NombreEstudiante">barreto alava melani yaelin</th>
-          <th class="NotasActividades">10</th>
-          <th class="NotasActividades">10</th>
-          <th class="NotasActividades">10</th>
-          <th class="NotasActividades">10</th>
-          <th class="NotasActividades">10</th>
-          <th class="NotasActividades">10</th>
-          <th class="NotasActividades">10</th>
-          <th class="NotasActividades">10</th>
-          <th class="NotasActividades">10</th>
-          <th class="NotasActividades">10</th>
-      </tr>
-      <tr class="Final">
-          <th colspan="9">
-  
-          </th>
-      </tr>
-  </table>
-  </div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Estudiantes</title>
+        <link rel="stylesheet" href="css/pruebas.css">
+    </head>
+    <body>
+        <input  id="Inicio" type="radio" name="group">
+        <input  id="Notas" type="radio" name="group">
+        <input  id="Tareas" type="radio" name="group" checked>
+        <input  id="Desempeño Estudiantes" type="radio" name="group">
+        <input  id="Desempeño Curso" type="radio" name="group">
+        <input  id="Configuracion" type="radio" name="group">
+        <div class="menuToggle"></div>
+        <div class="sidebar" id="sidebar">
+            <ul>
+                <li class="logo" style="--bg:#333;">
+                    <a href="#">
+                        <div class="icon"><ion-icon name="logo-apple"></ion-icon></div>
+                        <div class="text">Bernabe de Larraul</div>
+                    </a>
+                </li>
+            </ul>
+            <div class="icons">
+                <label for="Inicio" style="--bg:#f44336;">
+                    <div class="icon"><ion-icon name="home-outline"></ion-icon></div>
+                    <div class="text">Inicio</div>
+                </label>
+                <label for="Notas" style="--bg:#ffa117;">
+                    <div class="icon"><ion-icon name="clipboard-outline"></ion-icon></div>
+                    <div class="text">Notas</div>
+                </label>
+                <label for="Tareas" style="--bg:#0fc70f;">
+                    <div class="icon"><ion-icon name="document-outline"></ion-icon></div>
+                    <div class="text">Tareas</div>
+                </label>
+                <label for="Desempeño Estudiantes" style="--bg:#2196f3;">
+                    <div class="icon"><ion-icon name="id-card-outline"></ion-icon></div>
+                    <div class="text">Desempeño Estudiantes</div>
+                </label>
+                <label for="Desempeño Curso" style="--bg:#b145e9;">
+                    <div class="icon"><ion-icon name="storefront-outline"></ion-icon></div>
+                    <div class="text">Desempeño Curso</div>
+                </label>
+                <label for="Configuracion" style="--bg:#e91e63;">
+                    <div class="icon"><ion-icon name="settings-outline"></ion-icon></div>
+                    <div class="text">Configuracion</div>
+                </label>
+            </div>
+            <ul>
+                <div class="bottom" id="bottom">
+                    <li style="--bg:#333">
+                        <a href="#">
+                            <div class="icon">
+                                <div class="imgBx">
+                                    <img src="img/Logo empresarial.png">
+                                </div>
+                            </div>
+                            <div class="text">Anthony Aimacaña</div>
+                        </a>
+                    </li>
+                    <li style="--bg:#333;">
+                        <a href="">
+                            <div class="icon"><ion-icon name="log-out-outline"></ion-icon></div>
+                            <div class="text">Logout</div>
+                        </a>
+                    </li>
+                </div>
+            </ul>
+        </div>
+        <div class="content" id="contenedorInformacion">
+            <div class="contentBx Inicio" for="Inicio">
+                <h2>Licenciados</h2>
+                <p>
+                    ¡Bienvenido al sistema de notas de la Unidad Educativa Fiscomisional Bernabé de Larraul! <br>
+                    En este apartado se le proporcionara el listado de los Licenciados de la institucion, junto con sus respectivos nombres y asignaturas.
+                </p>
+                <div class="container">
+                    <div class="card">
+                        <div class="imgBx">
+                            <img src="img/Licenciados/Kennet Chungandro.jpg">
+                        </div>
+                        <div class="info">
+                            <h2>Kennet Chungandro</h2>
+                            <h3>Asignaturas</h3>
+                            <p>Programacion</p>
+                            <p>Diseño Web</p>
+                            <p>Soporte Tecnico</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="imgBx">
+                            <img src="img/Licenciados/Jorge Ortega.jpg">
+                        </div>
+                        <div class="info">
+                            <h2>Jorge Ortega</h2>
+                            <h3>Asignaturas</h3>
+                            <p>Educacion Fisica</p>
+                            <p>Biologia</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="imgBx">
+                            <img src="img/Licenciados/Majito.jpg">
+                        </div>
+                        <div class="info">
+                            <h2>Jorge Ortega</h2>
+                            <h3>Asignaturas</h3>
+                            <p>Educacion Fisica</p>
+                            <p>Biologia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contentBx Notas" for="Notas">
+                <h2>Notas</h2>
+                <p>Apartado de Notas de los grados por Asignaturas</p>
+                <div class="Opciones">
+                        <p>Grado:</p>
+                        <select name="Grado" id="Grado">
+                            <option value="8vo">8vo</option>
+                            <option value="9no">9no</option>
+                            <option value="10mo">10mo</option>
+                            <option value="1BGU">1BGU</option>
+                            <option value="2BGU">2BGU</option>
+                            <option value="3BGU">3BGU</option>
+                        </select>
+                        <p>Asignatura:</p>
+                        <select name="Grado" id="Grado">
+                            <option value="Programacion">Programacion</option>
+                            <option value="Diseño Web">Diseño Web</option>
+                            <option value="Soporte">Soporte</option>
+                        </select>
+                </div>
+                <main class="table">
+                  <section class="table_header">
+                    <h1>Unidad Educativa Fiscomisional Bernabe De Larraul</h1>
+                  </section>
+                  <section class="table_body">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th> Estudiante </th>
+                          <th>
+                            <div class="Tareas">
+                              <div class="NombreTarea">
+                                Definicion de variables
+                              </div>
+                              <div class="FechaTareas">
+                                <div class="FechaEmision">
+                                  1 Abr, 2024
+                                </div>
+                                <div class="FechaEntrega">
+                                  2 Abr, 2024
+                                </div>
+                              </div>
+                            </div>
+                          </th>
+                          <th>
+                            <div class="Tareas">
+                              <div class="NombreTarea">
+                                Que Es Framework
+                              </div>
+                              <div class="FechaTareas">
+                                <div class="FechaEmision">
+                                  1 Abr, 2024
+                                </div>
+                                <div class="FechaEntrega">
+                                  2 Abr, 2024
+                                </div>
+                              </div>
+                            </div>
+                          </th>
+                          <th>
+                            <div class="Tareas">
+                              <div class="NombreTarea">
+                                Que Tipos De Framework Existen 
+                              </div>
+                              <div class="FechaTareas">
+                                <div class="FechaEmision">
+                                  1 Abr, 2024
+                                </div>
+                                <div class="FechaEntrega">
+                                  2 Abr, 2024
+                                </div>
+                              </div>
+                            </div>
+                          </th>
+                          <th>
+                            <div class="Tareas">
+                              <div class="NombreTarea">
+                                Definicion de variables
+                              </div>
+                              <div class="FechaTareas">
+                                <div class="FechaEmision">
+                                  1 Abr, 2024
+                                </div>
+                                <div class="FechaEntrega">
+                                  2 Abr, 2024
+                                </div>
+                              </div>
+                            </div>
+                          </th>
+                          <th>
+                            <div class="Tareas">
+                              <div class="NombreTarea">
+                                Que Es Framework
+                              </div>
+                              <div class="FechaTareas">
+                                <div class="FechaEmision">
+                                  1 Abr, 2024
+                                </div>
+                                <div class="FechaEntrega">
+                                  2 Abr, 2024
+                                </div>
+                              </div>
+                            </div>
+                          </th>
+                          <th>
+                            <div class="Tareas">
+                              <div class="NombreTarea">
+                                Que Tipos De Framework Existen 
+                              </div>
+                              <div class="FechaTareas">
+                                <div class="FechaEmision">
+                                  1 Abr, 2024
+                                </div>
+                                <div class="FechaEntrega">
+                                  2 Abr, 2024
+                                </div>
+                              </div>
+                            </div>
+                          </th>
+                          <th>
+                            <div class="Tareas">
+                              <div class="NombreTarea">
+                                Definicion de variables
+                              </div>
+                              <div class="FechaTareas">
+                                <div class="FechaEmision">
+                                  1 Abr, 2024
+                                </div>
+                                <div class="FechaEntrega">
+                                  2 Abr, 2024
+                                </div>
+                              </div>
+                            </div>
+                          </th>
+                          <th>
+                            <div class="Tareas">
+                              <div class="NombreTarea">
+                                Que Es Framework
+                              </div>
+                              <div class="FechaTareas">
+                                <div class="FechaEmision">
+                                  1 Abr, 2024
+                                </div>
+                                <div class="FechaEntrega">
+                                  2 Abr, 2024
+                                </div>
+                              </div>
+                            </div>
+                          </th>
+                          <th>
+                            <div class="Tareas">
+                              <div class="NombreTarea">
+                                Que Tipos De Framework Existen 
+                              </div>
+                              <div class="FechaTareas">
+                                <div class="FechaEmision">
+                                  1 Abr, 2024
+                                </div>
+                                <div class="FechaEntrega">
+                                  2 Abr, 2024
+                                </div>
+                              </div>
+                            </div>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="estudiante"> Aimacaña Zhizhpon Anthony Xavier </td>
+                          <td> 10</td>
+                          <td> 10</td>
+                          <td> 10 </td>
+                          <td> 10</td>
+                          <td> 10</td>
+                          <td> 10 </td>
+                          <td> 10</td>
+                          <td> 10</td>
+                          <td> 10 </td>
+                        </tr>
+                        <tr>
+                          <td class="estudiante"> Suntaxi Ojeda Wilson Steve </td>
+                          <td> 10</td>
+                          <td> 10</td>
+                          <td> 10 </td>
+                          <td> 10</td>
+                          <td> 10</td>
+                          <td> 10 </td>
+                          <td> 10</td>
+                          <td> 10</td>
+                          <td> 10 </td>
+                        </tr>
+                        <tr>
+                          <td class="estudiante"> Pascal Pascal Tania Cristin </td>
+                          <td> 10</td>
+                          <td> 10</td>
+                          <td> 10 </td>
+                          <td> 10</td>
+                          <td> 10</td>
+                          <td> 10 </td>
+                          <td> 10</td>
+                          <td> 10</td>
+                          <td> 10 </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </section>
+                </main>
+            </div>
+            <div class="contentBx Tareas" for="Tareas">
+                <div class="contenido">
+                    <h2>Tareas</h2>
+                    <p>Apartado de Tareas aqui se vera la tareas asignadas y se asignar las tareas para cada curso</p>
+                    <button class="CrearTarea" id="CrearTarea">Crear Tarea</button>
+                    <div class="Opciones">
+                        <p>Grado:</p>
+                        <select name="Grado" id="Grado">
+                            <option value="8vo">8vo</option>
+                            <option value="9no">9no</option>
+                            <option value="10mo">10mo</option>
+                            <option value="1BGU">1BGU</option>
+                            <option value="2BGU">2BGU</option>
+                            <option value="3BGU">3BGU</option>
+                        </select>
+                        <p>Asignatura:</p>
+                        <select name="Asignatura" id="Asignatura">
+                            <option value="Programacion">Programacion</option>
+                            <option value="Diseño Web">Diseño Web</option>
+                            <option value="Soporte">Soporte</option>
+                        </select>
+                    </div>
+                    <main class="table">
+                      <section class="table_header">
+                        <h1>Programación</h1>
+                      </section>
+                      <section class="table_body">
+                        <table>
+                          <thead>
+                            <tr>
+                              <th> Tarea </th>
+                              <th> Colaboradores </th>
+                              <th> Fecha Emision </th>
+                              <th> Fecha Entrega </th>
+                              <th> Editar </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td> Definicion de variables </td>
+                              <td> Individual</td>
+                              <td> 1 Abr,2024 </td>
+                              <td> 2 Abr, 2025 </td>
+                              <td>
+                                <a href="">
+                                  Editar
+                                </a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td> Que Es Framework </td>
+                              <td> Individual</td>
+                              <td> 1 Abr,2024 </td>
+                              <td> 2 Abr, 2025 </td>
+                              <td>
+                                <a href="">
+                                  Editar
+                                </a>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </section>
+                    </main>
+                </div>
+                <div class="NuevaTarea">
+                    <form>
+                        <div class="CreatTarea">
+                            <p>Nombre de la tarea</p>
+                            <input type="text" required>
+                        </div>
+                        <div class="CreatTarea">
+                            <p>Fecha Maxima de entrega</p>
+                            <input type="date" required>
+                        </div>
+                        <div class="CreatTarea">
+                            <p>Curso</p>
+                            <select name="Grado" id="Grado">
+                                <option value="8vo">8vo</option>
+                                <option value="9no">9no</option>
+                                <option value="10mo">10mo</option>
+                                <option value="1BGU">1BGU</option>
+                                <option value="2BGU">2BGU</option>
+                                <option value="3BGU">3BGU</option>
+                            </select>
+                        </div>
+                        <div class="CreatTarea">
+                            <p>Asignatura</p>
+                            <select name="Asignatura" id="Asignatura">
+                                <option value="Programacion">Programacion</option>
+                                <option value="Diseño Web">Diseño Web</option>
+                                <option value="Soporte">Soporte</option>
+                            </select>
+                        </div>
+                        <button>Crear</button>
+                    </form>
+                </div>
+            </div>
+            <div class="contentBx" for="Desempeño Estudiantes">
+                <h2>Desempeño Estudiantes</h2>
+                <p>Muestra el desempeño de los estudiantes</p>
+                <div class="TableDesempeño">
+                    <table border="1">
+                        <tr>
+                            <th>Estudiante</th>
+                            <th></th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="contentBx" for="Desempeño Curso">
+                <h2>Desempeño Curso</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi numquam fugiat nemo, itaque perferendis ea perspiciatis repellendus dolores laudantium beatae minima facere fuga voluptatibus esse tempora? Autem suscipit nobis inventore.</p>
+            </div>
+            <div class="contentBx" for="Configuracion">
+                <h2>Configuracion</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi numquam fugiat nemo, itaque perferendis ea perspiciatis repellendus dolores laudantium beatae minima facere fuga voluptatibus esse tempora? Autem suscipit nobis inventore.</p>
+            </div>
+        </div>
+        <script>
+            let menuToggle = document.querySelector('.menuToggle');
+            let sidebar = document.querySelector('.sidebar');
+            let content = document.querySelector('.content');
+            let contenido = document.querySelector('.contenido');
+            let NuevaTarea= document.querySelector('.NuevaTarea');
+            menuToggle.onclick = function(){
+                menuToggle.classList.toggle('active');
+                sidebar.classList.toggle('active');
+                content.classList.toggle('active');
+            }
+            CrearTarea.onclick = function(){
+                contenido.style.display = "none"
+                NuevaTarea.style.display = "flex"
+            }
+        </script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script src="js/script.js"></script>
+    </body>
 </html>
