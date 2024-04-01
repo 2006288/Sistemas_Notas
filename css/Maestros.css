@@ -1063,6 +1063,39 @@ input:nth-child(6):checked ~ .content .contentBx:nth-child(6)
     font-size: 0.8em;
     color: var(--cinnabar-400);
     }
-
     /*Notas*/
+    .content .contentBx.Notas .Opciones
+    {
+        flex-direction: column;
+    }
+    .content .contentBx.Notas main.table .table_header
+    {
+        font-size: 13px;
+    }
+    .content .contentBx.Notas main.table .table_body tbody tr:hover td.estudiante
+    {
+        width: 175px;
+        height: 50px;
+        padding: 5px;
+    }
+    /*Tareas*/
+    .content .contentBx.Tareas .Opciones
+    {
+        flex-direction: column;
+    }
+    /*Desempeño de Estudiantes*/
+    .content .contentBx.Desempeño_Estudiantes .Opciones
+    {
+        flex-direction: column;
+    }
+    .content .contentBx.Desempeño_Estudiantes main.table .table_header
+    {
+        font-size: 13px;
+    }
+    .content .contentBx.Desempeño_Estudiantes main.table .table_body tbody tr:hover td.estudiante
+    {
+        width: 175px;
+        height: 50px;
+        padding: 5px;
+    }
 }
